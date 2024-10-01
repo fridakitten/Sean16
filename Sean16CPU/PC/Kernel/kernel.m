@@ -6,7 +6,6 @@
 //
 
 #include "../../Sean16.h"
-#include "../KeyboardTracker.h"
 #include "kernel.h"
 #import <Cocoa/Cocoa.h>
 
@@ -14,11 +13,6 @@ extern void *execute(void *arg);
 
 void kernel_init(uint8_t binmap[1000][6]) {
     uint8_t kernelmap[1000][6];
-    
-    // preiphal init
-    KeyboardTracker *tracker = [[KeyboardTracker alloc] init];
-    [tracker startTracking];
-    sleep(500);
     
     
     //NSApplication *app = [NSApplication sharedApplication];

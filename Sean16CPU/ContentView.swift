@@ -21,7 +21,6 @@ struct ScreenEmulatorViewWrapper: NSViewRepresentable {
 }
 
 struct ContentView: View {
-    let tracker = KeyboardTracker()
     @State var hello: String = ""
     var body: some View {
         GeometryReader { geometry in
@@ -38,7 +37,6 @@ struct ContentView: View {
                         DispatchQueue.global(qos: .background).async {
                             kickstart()  // Start the emulator on appear
                         }
-                        tracker.startTracking()
                     }
             }
             .edgesIgnoringSafeArea(.all)  // Fill the entire window

@@ -68,31 +68,31 @@ void *execute(/*proc *proccess*/void *arg) {
             ptr1 = &reg[*(proccess->page->memory[i][1])];
         } else {
             *ptr1 = *(proccess->page->memory[i][1]) - 64;
-            printf("[cpu] is val\n");
+            //printf("[cpu] is val\n");
         }
         if (*(proccess->page->memory[i][2]) < 65) {
             ptr2 = &reg[*(proccess->page->memory[i][2])];
         } else {
             *ptr2 = *(proccess->page->memory[i][2]) - 64;
-            printf("[cpu] is val\n");
+            //printf("[cpu] is val\n");
         }
         if (*(proccess->page->memory[i][3]) < 65) {
             ptr3 = &reg[*(proccess->page->memory[i][3])];
         } else {
             *ptr3 = *(proccess->page->memory[i][3]) - 64;
-            printf("[cpu] is val\n");
+            //printf("[cpu] is val\n");
         }
         if (*(proccess->page->memory[i][4]) < 65) {
             ptr4 = &reg[*(proccess->page->memory[i][4])];
         } else {
             *ptr4 = *(proccess->page->memory[i][4]) - 64;
-            printf("[cpu] is val\n");
+            //printf("[cpu] is val\n");
         }
         if (*(proccess->page->memory[i][5]) < 65) {
             ptr5 = &reg[*(proccess->page->memory[i][5])];
         } else {
             *ptr5 = *(proccess->page->memory[i][5]) - 64;
-            printf("[cpu] is val\n");
+            //printf("[cpu] is val\n");
         }
         
         switch(instruction) {

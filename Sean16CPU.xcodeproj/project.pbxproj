@@ -10,7 +10,6 @@
 		F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382AE2CA7119C00EDDF84 /* gpu.m */; };
 		F26382B22CA7502E00EDDF84 /* CursorTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382B12CA7502E00EDDF84 /* CursorTracker.m */; };
 		F26382B52CA766FA00EDDF84 /* Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382B42CA766FA00EDDF84 /* Delegate.m */; };
-		F29F77B22CAB44B500C67AAE /* KeyboardTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = F29F77B12CAB44B500C67AAE /* KeyboardTracker.m */; };
 		F2F733DA2CA5C17300117E3C /* Sean16CPUApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F733D92CA5C17300117E3C /* Sean16CPUApp.swift */; };
 		F2F733DC2CA5C17300117E3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F733DB2CA5C17300117E3C /* ContentView.swift */; };
 		F2F733DE2CA5C17500117E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F733DD2CA5C17500117E3C /* Assets.xcassets */; };
@@ -32,8 +31,6 @@
 		F26382B32CA7504A00EDDF84 /* CursorTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CursorTracker.h; sourceTree = "<group>"; };
 		F26382B42CA766FA00EDDF84 /* Delegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Delegate.m; sourceTree = "<group>"; };
 		F26382B62CA7678C00EDDF84 /* Delegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Delegate.h; sourceTree = "<group>"; };
-		F29F77B12CAB44B500C67AAE /* KeyboardTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardTracker.m; sourceTree = "<group>"; };
-		F29F77B32CAB44D200C67AAE /* KeyboardTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardTracker.h; sourceTree = "<group>"; };
 		F2F733D92CA5C17300117E3C /* Sean16CPUApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sean16CPUApp.swift; sourceTree = "<group>"; };
 		F2F733DB2CA5C17300117E3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F2F733DD2CA5C17500117E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,8 +107,6 @@
 				F2F7341E2CA70A5000117E3C /* Display.m */,
 				F26382B32CA7504A00EDDF84 /* CursorTracker.h */,
 				F26382B12CA7502E00EDDF84 /* CursorTracker.m */,
-				F29F77B32CAB44D200C67AAE /* KeyboardTracker.h */,
-				F29F77B12CAB44B500C67AAE /* KeyboardTracker.m */,
 				F26382B62CA7678C00EDDF84 /* Delegate.h */,
 				F26382B42CA766FA00EDDF84 /* Delegate.m */,
 				F2F734112CA5DCB300117E3C /* kickstart.c */,
@@ -216,7 +211,6 @@
 				F26382B22CA7502E00EDDF84 /* CursorTracker.m in Sources */,
 				F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */,
 				F2F7340D2CA5C8DB00117E3C /* Interpreter.m in Sources */,
-				F29F77B22CAB44B500C67AAE /* KeyboardTracker.m in Sources */,
 				F2F733DC2CA5C17300117E3C /* ContentView.swift in Sources */,
 				F2F734182CA5F60800117E3C /* kernel.m in Sources */,
 				F2F734152CA5DF1800117E3C /* ram.c in Sources */,
