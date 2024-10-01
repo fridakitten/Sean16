@@ -6,8 +6,5 @@
 
 #include <stdint.h>
 #include "Sean16.h"
-#import "PC/Display.h"
-#import "PC/CursorTracker.h"
-
-//INTERPRETER
-uint8_t** interpret(NSString *code);
+#import <Display/Display.h>
+#import <Periphals/CursorTracker.h>

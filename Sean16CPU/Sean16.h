@@ -8,12 +8,12 @@
 #ifndef Sean16_h
 #define Sean16_h
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include <pthread/pthread.h>
+#import <stdio.h>
+#import <stdlib.h>
+#import <unistd.h>
+#import <stdint.h>
+#import <stdbool.h>
+#import <pthread/pthread.h>
 
 #define S_CPU_REGISTER_MAX 128
 #define S_RAMSIZE_MAX 64000000

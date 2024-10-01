@@ -6,8 +6,8 @@
 //
 
 #include "../Sean16.h"
-#include "Kernel/proc.h"
-#include "gpu.h"
+#include <Kernel/kernel.h>
+#include <GPU/gpu.h>
 
 #import <CoreGraphics/CoreGraphics.h>
 
@@ -55,18 +55,6 @@ void periphalMUS(page_t *periphals, uint16_t *x, uint16_t *y) {
     *y = (uint16_t)mouseptr->y;
 }
 
-/*#define DUMMYREG_SIZE 5
-
-uint16_t dummyreg[DUMMYREG_SIZE];
-int dummymax = -1;
-
-uint16_t* dummy(uint8_t *orig, uint16_t sub) {
-    dummymax++;
-    dummyreg[dummymax] = *orig - sub;
-    
-    return &dummyreg[dummymax];
-}*/
-
 void *execute(void *arg) {
     proc *proccess = (proc *)arg;
     
@@ -86,7 +74,6 @@ void *execute(void *arg) {
     printf("[cpu] executing\n");
     
     for(int i = 0; i < 1000; i++) {
-        //dummyalloc();
         instruction = *(proccess->page->memory[i][0]);
         
         if (*(proccess->page->memory[i][1]) < 65) {
@@ -153,7 +140,6 @@ void *execute(void *arg) {
                 break;
             case 0xA0:
                 setpixel(*ptr1, *ptr2, *ptr3);
-                printf("[gpu setpx] -> %d %d -> color %d\n", *ptr1, *ptr2, *ptr3);
                 break;
             case 0xA1:
                 drawLine(*ptr1, *ptr2, *ptr3, *ptr4, *ptr5);
@@ -174,9 +160,6 @@ void *execute(void *arg) {
                 printf("[cpu] 0x%02x is illegal\n", i);
                 return NULL;
         }
-        //dummyfree();
-        
     }
-    
     return NULL;
 }

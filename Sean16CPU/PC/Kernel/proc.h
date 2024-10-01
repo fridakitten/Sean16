@@ -9,7 +9,7 @@
 #define proc_h
 
 #include "../../Sean16.h"
-#include "../ram.h"
+#include <RAM/ram.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>

@@ -8,7 +8,7 @@
 #include "../../Sean16.h"
 #include "kernel.h"
 #import <Cocoa/Cocoa.h>
-#import "../CursorTracker.h"
+#import <Periphals/CursorTracker.h>
 
 extern void *execute(void *arg);
 
