@@ -5,7 +5,7 @@
 //  Created by Frida Boleslawska on 26.09.24.
 //
 
-#include "../Sean16.h"
+#include "Sean16.h"
 
 extern void kernel_init(uint8_t binmap[1000][6]);
 
