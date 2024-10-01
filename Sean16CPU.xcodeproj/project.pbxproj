@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F237BE452CAC63B700D353A6 /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = F237BE432CAC63B700D353A6 /* Display.m */; };
+		F237BE4B2CAC6B5F00D353A6 /* peripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = F237BE4A2CAC6B5F00D353A6 /* peripheral.m */; };
 		F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382AE2CA7119C00EDDF84 /* gpu.m */; };
 		F26382B22CA7502E00EDDF84 /* Mouse.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382B12CA7502E00EDDF84 /* Mouse.m */; };
 		F2F733DA2CA5C17300117E3C /* Sean16CPUApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F733D92CA5C17300117E3C /* Sean16CPUApp.swift */; };
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		F237BE432CAC63B700D353A6 /* Display.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Display.m; sourceTree = "<group>"; };
 		F237BE442CAC63B700D353A6 /* Display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
+		F237BE4A2CAC6B5F00D353A6 /* peripheral.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = peripheral.m; sourceTree = "<group>"; };
+		F237BE4C2CAC6B8000D353A6 /* peripheral.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = peripheral.h; sourceTree = "<group>"; };
 		F26382AE2CA7119C00EDDF84 /* gpu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gpu.m; sourceTree = "<group>"; };
 		F26382B02CA712D400EDDF84 /* gpu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gpu.h; sourceTree = "<group>"; };
 		F26382B12CA7502E00EDDF84 /* Mouse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mouse.m; sourceTree = "<group>"; };
@@ -82,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				F2F734082CA5C1B700117E3C /* cpu.m */,
+				F237BE4A2CAC6B5F00D353A6 /* peripheral.m */,
+				F237BE4C2CAC6B8000D353A6 /* peripheral.h */,
 			);
 			path = CPU;
 			sourceTree = "<group>";
@@ -115,9 +120,9 @@
 		F2F733D82CA5C17300117E3C /* Sean16CPU */ = {
 			isa = PBXGroup;
 			children = (
-				F2F7340A2CA5C1F400117E3C /* PC */,
 				F2F734052CA5C1B700117E3C /* Sean16.main.h */,
 				F2F734072CA5C1B700117E3C /* Sean16.h */,
+				F2F7340A2CA5C1F400117E3C /* PC */,
 				F2F734112CA5DCB300117E3C /* kickstart.c */,
 				F2F733D92CA5C17300117E3C /* Sean16CPUApp.swift */,
 				F2F733DB2CA5C17300117E3C /* ContentView.swift */,
@@ -235,6 +240,7 @@
 				F26382B22CA7502E00EDDF84 /* Mouse.m in Sources */,
 				F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */,
 				F237BE452CAC63B700D353A6 /* Display.m in Sources */,
+				F237BE4B2CAC6B5F00D353A6 /* peripheral.m in Sources */,
 				F2F733DC2CA5C17300117E3C /* ContentView.swift in Sources */,
 				F2F734182CA5F60800117E3C /* kernel.m in Sources */,
 				F2F734152CA5DF1800117E3C /* ram.c in Sources */,

@@ -20,14 +20,12 @@ void kernel_init(uint8_t binmap[1000][6]) {
     // fork process
     proc *child_task = proc_fork(binmap);
     child_task->peri = genpage();
+    
+    // peripherials mapping
     *((CGPoint **)&child_task->peri->memory[0][0]) = [mouse getCursorPosition];
     *((NSInteger **)&child_task->peri->memory[0][1]) = [mouse getLastMouseButtonState];
     
-    /*if (pthread_create(&child_task->thread, NULL, execute, (void *)child_task) != 0) {
-        perror("Failed to create thread");
-    }
-    pthread_join(child_task->thread, NULL);*/
-    
+    // executing process
     execute((void*)child_task);
 
     // DEINIT
