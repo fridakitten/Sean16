@@ -100,37 +100,37 @@ void *execute(/*proc *proccess*/void *arg) {
                 printf("[cpu] exited on line %d\n", i);
                 return NULL;
             case 0x01:
-                reg[*ptr1] = *ptr2;
+                *ptr1 = *ptr2;
                 break;
             case 0x02:
-                reg[*ptr1] += reg[*ptr2];
+                *ptr1 += *ptr2;
                 break;
             case 0x03:
-                reg[*ptr1] -= reg[*ptr2];
+                *ptr1 -= *ptr2;
                 break;
             case 0x04:
-                reg[*ptr1] *= reg[*ptr2];
+                *ptr1 *= *ptr2;
                 break;
             case 0x05:
-                reg[*ptr1] /= reg[*ptr2];
+                *ptr1 /= *ptr2;
                 break;
             case 0x06:
                 printf("[cpu] %d\n", *ptr1);
                 break;
             case 0x07:
-                i = reg[*ptr1];
+                i = *ptr1;
                 break;
             case 0x08:
-                evaluate(&i, *ptr1, reg[*ptr2], reg[*ptr3], reg[*ptr4]);
+                evaluate(&i, *ptr1, *ptr2, *ptr3, *ptr4);
                 break;
             case 0xA0:
-                setpixel(reg[*ptr1], reg[*ptr2], *ptr3);
+                setpixel(*ptr1, *ptr2, *ptr3);
                 break;
             case 0xA1:
-                drawLine(reg[*ptr1], reg[*ptr2], reg[*ptr3], reg[*ptr4], *ptr5);
+                drawLine(*ptr1, *ptr2, *ptr3, *ptr4, *ptr5);
                 break;
             case 0xA2:
-                drawCharacter(reg[*ptr1], reg[*ptr2], reg[*ptr3], *ptr4);
+                drawCharacter(*ptr1, *ptr2, *ptr3, *ptr4);
                 break;
             case 0xA3:
                 clearScreen();
