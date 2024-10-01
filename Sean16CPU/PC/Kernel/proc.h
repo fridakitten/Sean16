@@ -20,6 +20,7 @@ typedef struct {
     pthread_t thread;       // processes thread;
     page_t *page;           // page for binary
     page_t *var;            // page for variables
+    page_t *peri;           // peripherals mapping
 } proc;
 
 proc* proc_fork(uint8_t binmap[1000][6]);

@@ -19,13 +19,14 @@ void kernel_init(uint8_t binmap[1000][6]) {
     CursorTracker *mouse = [[CursorTracker alloc] init];
     [mouse startTracking];
     
-    // periphal memory mapping
-    page_t * periphals = genpage();
-    *((CGPoint **)&periphals->memory[0][0]) = [mouse getCursorPosition];
-    
     // fork process
     proc *kernel_task = proc_fork(kernelmap);
+    kernel_task->peri = genpage();
+    *((CGPoint **)&kernel_task->peri->memory[0][0]) = [mouse getCursorPosition];
+    
     proc *child_task = proc_fork(binmap);
+    child_task->peri = genpage();
+    *((CGPoint **)&child_task->peri->memory[0][0]) = [mouse getCursorPosition];
     
     /*if (pthread_create(&child_task->thread, NULL, execute, (void *)child_task) != 0) {
         perror("Failed to create thread");
@@ -35,7 +36,6 @@ void kernel_init(uint8_t binmap[1000][6]) {
 
     // DEINIT
     [mouse stopTracking];
-    free(periphals);
     
     // killing task
     proc_kill(child_task);
