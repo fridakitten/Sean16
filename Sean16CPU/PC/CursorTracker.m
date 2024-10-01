@@ -26,6 +26,10 @@
     return self;
 }
 
+- (NSPoint)getCursorPosition {
+    return _cursorPosition;
+}
+
 - (void)startTracking {
     [self hideCursor];
     
