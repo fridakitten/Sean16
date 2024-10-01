@@ -13,6 +13,7 @@
 extern void *execute(void *arg);
 
 void kernel_init(uint8_t binmap[1000][6]) {
+    // INIT
     uint8_t kernelmap[1000][6];
     
     CursorTracker *mouse = [[CursorTracker alloc] init];
@@ -31,6 +32,10 @@ void kernel_init(uint8_t binmap[1000][6]) {
     }
     pthread_join(child_task->thread, NULL);
 
+    // DEINIT
+    [mouse stopTracking];
+    free(periphals);
+    
     // killing task
     proc_kill(child_task);
     proc_kill(kernel_task);

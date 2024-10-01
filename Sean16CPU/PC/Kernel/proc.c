@@ -33,5 +33,5 @@ proc* proc_fork(uint8_t binmap[1000][6]) {
 void proc_kill(proc *process) {
     uint16_t pidt = process->pid;
     
-    processes[pidt]->state = 3;
+    free(processes[pidt]);
 }
