@@ -50,15 +50,22 @@ void evaluate(int *i, int mode, int reg1, int reg2, int jmpaddr) {
 void periphalMUS(page_t *periphals, uint16_t *x, uint16_t *y) {
     CGPoint *mouseptr = *((CGPoint **)&periphals->memory[0][0]);
     
+    // Using GCD to set values on the main queue
     *x = (uint16_t)mouseptr->x;
     *y = (uint16_t)mouseptr->y;
 }
 
+/*#define DUMMYREG_SIZE 5
+
+uint16_t dummyreg[DUMMYREG_SIZE];
+int dummymax = -1;
+
 uint16_t* dummy(uint8_t *orig, uint16_t sub) {
-    uint16_t *dummy16 = malloc(sizeof(uint16_t));
-    *dummy16 = *orig - sub;
-    return dummy16;
-}
+    dummymax++;
+    dummyreg[dummymax] = *orig - sub;
+    
+    return &dummyreg[dummymax];
+}*/
 
 void *execute(void *arg) {
     proc *proccess = (proc *)arg;
@@ -72,38 +79,45 @@ void *execute(void *arg) {
     uint16_t *ptr3 = malloc(sizeof(uint16_t));
     uint16_t *ptr4 = malloc(sizeof(uint16_t));
     uint16_t *ptr5 = malloc(sizeof(uint16_t));
+    uint16_t dummyreg[5];
     uint8_t instruction;
     
     printf("[cpu] initialised\n");
     printf("[cpu] executing\n");
     
     for(int i = 0; i < 1000; i++) {
+        //dummyalloc();
         instruction = *(proccess->page->memory[i][0]);
         
         if (*(proccess->page->memory[i][1]) < 65) {
             ptr1 = &reg[*(proccess->page->memory[i][1])];
         } else {
-            ptr1 = dummy(proccess->page->memory[i][1], 64);
+            dummyreg[0] = *(proccess->page->memory[i][1]) - 64;
+            ptr1 = &dummyreg[0];
         }
         if (*(proccess->page->memory[i][2]) < 65) {
             ptr2 = &reg[*(proccess->page->memory[i][2])];
         } else {
-            ptr2 = dummy(proccess->page->memory[i][2], 64);
+            dummyreg[1] = *(proccess->page->memory[i][2]) - 64;
+            ptr2 = &dummyreg[1];
         }
         if (*(proccess->page->memory[i][3]) < 65) {
             ptr3 = &reg[*(proccess->page->memory[i][3])];
         } else {
-            ptr3 = dummy(proccess->page->memory[i][3], 64);
+            dummyreg[2] = *(proccess->page->memory[i][3]) - 64;
+            ptr3 = &dummyreg[2];
         }
         if (*(proccess->page->memory[i][4]) < 65) {
             ptr4 = &reg[*(proccess->page->memory[i][4])];
         } else {
-            ptr4 = dummy(proccess->page->memory[i][4], 64);
+            dummyreg[3] = *(proccess->page->memory[i][4]) - 64;
+            ptr4 = &dummyreg[3];
         }
         if (*(proccess->page->memory[i][5]) < 65) {
             ptr5 = &reg[*(proccess->page->memory[i][5])];
         } else {
-            ptr5 = dummy(proccess->page->memory[i][5], 64);
+            dummyreg[4] = *(proccess->page->memory[i][5]) - 64;
+            ptr5 = &dummyreg[4];
         }
         
         switch(instruction) {
@@ -160,6 +174,7 @@ void *execute(void *arg) {
                 printf("[cpu] 0x%02x is illegal\n", i);
                 return NULL;
         }
+        //dummyfree();
         
     }
     
