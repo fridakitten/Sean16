@@ -70,9 +70,13 @@
 
     NSPoint screenCursorPosition = [event locationInWindow];
     
+    // Keep the X position as is (no inversion)
     CGFloat scaledX = (screenCursorPosition.x / screenWidth) * 254.0;
-    CGFloat scaledY = (screenCursorPosition.y / screenHeight) * 159.0;
 
+    // Invert the Y position
+    CGFloat scaledY = (screenHeight - screenCursorPosition.y) / screenHeight * 159.0;
+
+    // Clamp the values to ensure they are within the desired range
     CGFloat clampedX = fmax(0, fmin(scaledX, 254.0));
     CGFloat clampedY = fmax(0, fmin(scaledY, 159.0));
 
