@@ -8,7 +8,6 @@
 #include "Sean16.h"
 #import "PC/Display.h"
 #import "PC/CursorTracker.h"
-#import "PC/Delegate.h"
 
 //INTERPRETER
 uint8_t** interpret(NSString *code);

@@ -17,6 +17,6 @@
 
 - (void)startTracking;
 - (void)stopTracking;
-- (NSPoint)getCursorPosition;
+- (NSPoint*)getCursorPosition;
 
 @end

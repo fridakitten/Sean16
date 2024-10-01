@@ -26,8 +26,8 @@
     return self;
 }
 
-- (NSPoint)getCursorPosition {
-    return _cursorPosition;
+- (NSPoint*)getCursorPosition {
+    return &_cursorPosition;
 }
 
 - (void)startTracking {
