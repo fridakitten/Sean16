@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382AE2CA7119C00EDDF84 /* gpu.m */; };
+		F26382B22CA7502E00EDDF84 /* CursorTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382B12CA7502E00EDDF84 /* CursorTracker.m */; };
+		F26382B52CA766FA00EDDF84 /* Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382B42CA766FA00EDDF84 /* Delegate.m */; };
+		F29F77B22CAB44B500C67AAE /* KeyboardTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = F29F77B12CAB44B500C67AAE /* KeyboardTracker.m */; };
+		F2F733DA2CA5C17300117E3C /* Sean16CPUApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F733D92CA5C17300117E3C /* Sean16CPUApp.swift */; };
+		F2F733DC2CA5C17300117E3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F733DB2CA5C17300117E3C /* ContentView.swift */; };
+		F2F733DE2CA5C17500117E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F733DD2CA5C17500117E3C /* Assets.xcassets */; };
+		F2F733E12CA5C17500117E3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F733E02CA5C17500117E3C /* Preview Assets.xcassets */; };
+		F2F734092CA5C1B700117E3C /* cpu.c in Sources */ = {isa = PBXBuildFile; fileRef = F2F734082CA5C1B700117E3C /* cpu.c */; };
+		F2F7340D2CA5C8DB00117E3C /* Interpreter.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F7340C2CA5C8DB00117E3C /* Interpreter.m */; };
+		F2F7340F2CA5CCE900117E3C /* UIConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7340E2CA5CCE900117E3C /* UIConsole.swift */; };
+		F2F734122CA5DCB300117E3C /* kickstart.c in Sources */ = {isa = PBXBuildFile; fileRef = F2F734112CA5DCB300117E3C /* kickstart.c */; };
+		F2F734152CA5DF1800117E3C /* ram.c in Sources */ = {isa = PBXBuildFile; fileRef = F2F734142CA5DF1800117E3C /* ram.c */; };
+		F2F734182CA5F60800117E3C /* kernel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F734172CA5F60800117E3C /* kernel.m */; };
+		F2F7341C2CA5F95A00117E3C /* proc.c in Sources */ = {isa = PBXBuildFile; fileRef = F2F7341B2CA5F95A00117E3C /* proc.c */; };
+		F2F7341F2CA70A5000117E3C /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F7341E2CA70A5000117E3C /* Display.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F26382AE2CA7119C00EDDF84 /* gpu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gpu.m; sourceTree = "<group>"; };
+		F26382B02CA712D400EDDF84 /* gpu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gpu.h; sourceTree = "<group>"; };
+		F26382B12CA7502E00EDDF84 /* CursorTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CursorTracker.m; sourceTree = "<group>"; };
+		F26382B32CA7504A00EDDF84 /* CursorTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CursorTracker.h; sourceTree = "<group>"; };
+		F26382B42CA766FA00EDDF84 /* Delegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Delegate.m; sourceTree = "<group>"; };
+		F26382B62CA7678C00EDDF84 /* Delegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Delegate.h; sourceTree = "<group>"; };
+		F29F77B12CAB44B500C67AAE /* KeyboardTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardTracker.m; sourceTree = "<group>"; };
+		F29F77B32CAB44D200C67AAE /* KeyboardTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardTracker.h; sourceTree = "<group>"; };
+		F2F733D92CA5C17300117E3C /* Sean16CPUApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sean16CPUApp.swift; sourceTree = "<group>"; };
+		F2F733DB2CA5C17300117E3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F2F733DD2CA5C17500117E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2F733E02CA5C17500117E3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F2F733E22CA5C17500117E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2F733E32CA5C17500117E3C /* Sean16CPU.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sean16CPU.entitlements; sourceTree = "<group>"; };
+		F2F734052CA5C1B700117E3C /* Sean16CPU-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sean16CPU-Bridging-Header.h"; sourceTree = "<group>"; };
+		F2F734062CA5C1B700117E3C /* Sean16CPU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sean16CPU.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2F734072CA5C1B700117E3C /* Sean16.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sean16.h; sourceTree = "<group>"; };
+		F2F734082CA5C1B700117E3C /* cpu.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = cpu.c; sourceTree = "<group>"; };
+		F2F7340C2CA5C8DB00117E3C /* Interpreter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Interpreter.m; sourceTree = "<group>"; };
+		F2F7340E2CA5CCE900117E3C /* UIConsole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConsole.swift; sourceTree = "<group>"; };
+		F2F734112CA5DCB300117E3C /* kickstart.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kickstart.c; sourceTree = "<group>"; };
+		F2F734142CA5DF1800117E3C /* ram.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ram.c; sourceTree = "<group>"; };
+		F2F734162CA5F60800117E3C /* kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kernel.h; sourceTree = "<group>"; };
+		F2F734172CA5F60800117E3C /* kernel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kernel.m; sourceTree = "<group>"; };
+		F2F7341A2CA5F95A00117E3C /* proc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = proc.h; sourceTree = "<group>"; };
+		F2F7341B2CA5F95A00117E3C /* proc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = proc.c; sourceTree = "<group>"; };
+		F2F7341D2CA6F6EF00117E3C /* ram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ram.h; sourceTree = "<group>"; };
+		F2F7341E2CA70A5000117E3C /* Display.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Display.m; sourceTree = "<group>"; };
+		F2F734202CA70A6400117E3C /* Display.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F2F733D32CA5C17300117E3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F2F733CD2CA5C17300117E3C = {
+			isa = PBXGroup;
+			children = (
+				F2F733D82CA5C17300117E3C /* Sean16CPU */,
+				F2F734062CA5C1B700117E3C /* Sean16CPU.app */,
+			);
+			sourceTree = "<group>";
+		};
+		F2F733D82CA5C17300117E3C /* Sean16CPU */ = {
+			isa = PBXGroup;
+			children = (
+				F2F734052CA5C1B700117E3C /* Sean16CPU-Bridging-Header.h */,
+				F2F734072CA5C1B700117E3C /* Sean16.h */,
+				F2F7340A2CA5C1F400117E3C /* PC */,
+				F2F7340B2CA5C8A200117E3C /* Interpreter */,
+				F2F733D92CA5C17300117E3C /* Sean16CPUApp.swift */,
+				F2F733DB2CA5C17300117E3C /* ContentView.swift */,
+				F2F7340E2CA5CCE900117E3C /* UIConsole.swift */,
+				F2F733DD2CA5C17500117E3C /* Assets.xcassets */,
+				F2F733E22CA5C17500117E3C /* Info.plist */,
+				F2F733E32CA5C17500117E3C /* Sean16CPU.entitlements */,
+				F2F733DF2CA5C17500117E3C /* Preview Content */,
+			);
+			path = Sean16CPU;
+			sourceTree = "<group>";
+		};
+		F2F733DF2CA5C17500117E3C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F2F733E02CA5C17500117E3C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F2F7340A2CA5C1F400117E3C /* PC */ = {
+			isa = PBXGroup;
+			children = (
+				F2F734192CA5F93900117E3C /* Kernel */,
+				F2F734202CA70A6400117E3C /* Display.h */,
+				F2F7341E2CA70A5000117E3C /* Display.m */,
+				F26382B32CA7504A00EDDF84 /* CursorTracker.h */,
+				F26382B12CA7502E00EDDF84 /* CursorTracker.m */,
+				F29F77B32CAB44D200C67AAE /* KeyboardTracker.h */,
+				F29F77B12CAB44B500C67AAE /* KeyboardTracker.m */,
+				F26382B62CA7678C00EDDF84 /* Delegate.h */,
+				F26382B42CA766FA00EDDF84 /* Delegate.m */,
+				F2F734112CA5DCB300117E3C /* kickstart.c */,
+				F2F734082CA5C1B700117E3C /* cpu.c */,
+				F2F7341D2CA6F6EF00117E3C /* ram.h */,
+				F2F734142CA5DF1800117E3C /* ram.c */,
+				F26382AE2CA7119C00EDDF84 /* gpu.m */,
+				F26382B02CA712D400EDDF84 /* gpu.h */,
+			);
+			path = PC;
+			sourceTree = "<group>";
+		};
+		F2F7340B2CA5C8A200117E3C /* Interpreter */ = {
+			isa = PBXGroup;
+			children = (
+				F2F7340C2CA5C8DB00117E3C /* Interpreter.m */,
+			);
+			path = Interpreter;
+			sourceTree = "<group>";
+		};
+		F2F734192CA5F93900117E3C /* Kernel */ = {
+			isa = PBXGroup;
+			children = (
+				F2F734162CA5F60800117E3C /* kernel.h */,
+				F2F734172CA5F60800117E3C /* kernel.m */,
+				F2F7341A2CA5F95A00117E3C /* proc.h */,
+				F2F7341B2CA5F95A00117E3C /* proc.c */,
+			);
+			path = Kernel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F2F733D52CA5C17300117E3C /* Sean16CPU */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2F733FC2CA5C17500117E3C /* Build configuration list for PBXNativeTarget "Sean16CPU" */;
+			buildPhases = (
+				F2F733D22CA5C17300117E3C /* Sources */,
+				F2F733D32CA5C17300117E3C /* Frameworks */,
+				F2F733D42CA5C17300117E3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sean16CPU;
+			productName = Sean16CPU;
+			productReference = F2F734062CA5C1B700117E3C /* Sean16CPU.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F2F733CE2CA5C17300117E3C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					F2F733D52CA5C17300117E3C = {
+						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
+					};
+				};
+			};
+			buildConfigurationList = F2F733D12CA5C17300117E3C /* Build configuration list for PBXProject "Sean16CPU" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F2F733CD2CA5C17300117E3C;
+			productRefGroup = F2F733CD2CA5C17300117E3C;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2F733D52CA5C17300117E3C /* Sean16CPU */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F2F733D42CA5C17300117E3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2F733E12CA5C17500117E3C /* Preview Assets.xcassets in Resources */,
+				F2F733DE2CA5C17500117E3C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F2F733D22CA5C17300117E3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F26382B22CA7502E00EDDF84 /* CursorTracker.m in Sources */,
+				F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */,
+				F2F7340D2CA5C8DB00117E3C /* Interpreter.m in Sources */,
+				F29F77B22CAB44B500C67AAE /* KeyboardTracker.m in Sources */,
+				F2F733DC2CA5C17300117E3C /* ContentView.swift in Sources */,
+				F2F734182CA5F60800117E3C /* kernel.m in Sources */,
+				F2F734152CA5DF1800117E3C /* ram.c in Sources */,
+				F2F7341F2CA70A5000117E3C /* Display.m in Sources */,
+				F2F734092CA5C1B700117E3C /* cpu.c in Sources */,
+				F2F7341C2CA5F95A00117E3C /* proc.c in Sources */,
+				F2F733DA2CA5C17300117E3C /* Sean16CPUApp.swift in Sources */,
+				F2F734122CA5DCB300117E3C /* kickstart.c in Sources */,
+				F26382B52CA766FA00EDDF84 /* Delegate.m in Sources */,
+				F2F7340F2CA5CCE900117E3C /* UIConsole.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F2F733FA2CA5C17500117E3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F2F733FB2CA5C17500117E3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		F2F733FD2CA5C17500117E3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Sean16CPU/Sean16CPU.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Sean16CPU/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Sean16CPU/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinac.sinac.Sean16CPU;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sean16CPU/Sean16CPU-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F2F733FE2CA5C17500117E3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Sean16CPU/Sean16CPU.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Sean16CPU/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Sean16CPU/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinac.sinac.Sean16CPU;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sean16CPU/Sean16CPU-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F2F733D12CA5C17300117E3C /* Build configuration list for PBXProject "Sean16CPU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2F733FA2CA5C17500117E3C /* Debug */,
+				F2F733FB2CA5C17500117E3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2F733FC2CA5C17500117E3C /* Build configuration list for PBXNativeTarget "Sean16CPU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2F733FD2CA5C17500117E3C /* Debug */,
+				F2F733FE2CA5C17500117E3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F2F733CE2CA5C17300117E3C /* Project object */;
+}
