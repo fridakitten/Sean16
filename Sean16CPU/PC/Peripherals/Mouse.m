@@ -5,13 +5,14 @@
 //  Created by Frida Boleslawska on 27.09.24.
 //
 
-#import "CursorTracker.h"
+#import "Mouse.h"
 
 @interface CursorTracker ()
 
 @property (nonatomic, strong) id trackingHandler;
 @property (nonatomic, strong) id shortcutEventHandler;
 @property (nonatomic, assign) BOOL cursorHidden;
+@property (nonatomic, assign) NSInteger lastMouseButtonState; // New property for mouse button state
 
 @end
 
@@ -22,6 +23,7 @@
     if (self) {
         _cursorPosition = NSMakePoint(0, 0);
         _cursorHidden = NO; // Initially, the cursor is not hidden
+        _lastMouseButtonState = 0; // Initially, no button pressed
     }
     return self;
 }
@@ -30,20 +32,36 @@
     return &_cursorPosition;
 }
 
+- (NSInteger*)getLastMouseButtonState {
+    return &_lastMouseButtonState;
+}
+
 - (void)startTracking {
     [self hideCursor];
-    
+
+    // Monitor for mouse movement
     self.trackingHandler = [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskMouseMoved handler:^(NSEvent *event) {
         [self updateCursorPosition:event];
         return event; // Pass the event along
     }];
     
+    // Monitor for keyboard shortcuts
     self.shortcutEventHandler = [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskKeyDown handler:^NSEvent * _Nullable(NSEvent *event) {
         if ((event.modifierFlags & NSEventModifierFlagCommand) && [[event charactersIgnoringModifiers] isEqualToString:@"r"]) {
             [self unhideCursor];
         }
         if ((event.modifierFlags & NSEventModifierFlagCommand) && [[event charactersIgnoringModifiers] isEqualToString:@"s"]) {
             [self hideCursor];
+        }
+        return event;
+    }];
+    
+    // Monitor for mouse button clicks (left and right)
+    self.trackingHandler = [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskLeftMouseDown | NSEventMaskRightMouseDown handler:^(NSEvent *event) {
+        if ([event type] == NSEventTypeLeftMouseDown) {
+            self.lastMouseButtonState = 2; // Left click
+        } else if ([event type] == NSEventTypeRightMouseDown) {
+            self.lastMouseButtonState = 1; // Right click
         }
         return event;
     }];
@@ -55,7 +73,7 @@
         self.trackingHandler = nil;
     }
     [self unhideCursor];
-    
+
     if (self.shortcutEventHandler) {
         [NSEvent removeMonitor:self.shortcutEventHandler];
         self.shortcutEventHandler = nil;
@@ -81,7 +99,7 @@
     CGFloat clampedY = fmax(0, fmin(scaledY, 159.0));
 
     self.cursorPosition = NSMakePoint(clampedX, clampedY);
-    //NSLog(@"Cursor Position (scaled to 255x155): %@", NSStringFromPoint(self.cursorPosition));
+    // NSLog(@"Cursor Position (scaled to 255x155): %@", NSStringFromPoint(self.cursorPosition));
 }
 
 - (void)hideCursor {

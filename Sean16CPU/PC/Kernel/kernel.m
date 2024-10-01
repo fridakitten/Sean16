@@ -8,7 +8,7 @@
 #include "../../Sean16.h"
 #include "kernel.h"
 #import <Cocoa/Cocoa.h>
-#import <Periphals/CursorTracker.h>
+#import <Peripherals/Mouse.h>
 
 extern void *execute(void *arg);
 

@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
-#import "Display.h"
+#import <Display/Display.h>
 
 @interface CursorTracker : NSObject
 
@@ -18,5 +18,6 @@
 - (void)startTracking;
 - (void)stopTracking;
 - (NSPoint*)getCursorPosition;
+- (NSInteger*)getLastMouseButtonState;
 
 @end

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F237BE452CAC63B700D353A6 /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = F237BE432CAC63B700D353A6 /* Display.m */; };
 		F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382AE2CA7119C00EDDF84 /* gpu.m */; };
-		F26382B22CA7502E00EDDF84 /* CursorTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382B12CA7502E00EDDF84 /* CursorTracker.m */; };
+		F26382B22CA7502E00EDDF84 /* Mouse.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382B12CA7502E00EDDF84 /* Mouse.m */; };
 		F2F733DA2CA5C17300117E3C /* Sean16CPUApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F733D92CA5C17300117E3C /* Sean16CPUApp.swift */; };
 		F2F733DC2CA5C17300117E3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F733DB2CA5C17300117E3C /* ContentView.swift */; };
 		F2F733DE2CA5C17500117E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F733DD2CA5C17500117E3C /* Assets.xcassets */; };
@@ -27,8 +27,8 @@
 		F237BE442CAC63B700D353A6 /* Display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
 		F26382AE2CA7119C00EDDF84 /* gpu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gpu.m; sourceTree = "<group>"; };
 		F26382B02CA712D400EDDF84 /* gpu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gpu.h; sourceTree = "<group>"; };
-		F26382B12CA7502E00EDDF84 /* CursorTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CursorTracker.m; sourceTree = "<group>"; };
-		F26382B32CA7504A00EDDF84 /* CursorTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CursorTracker.h; sourceTree = "<group>"; };
+		F26382B12CA7502E00EDDF84 /* Mouse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mouse.m; sourceTree = "<group>"; };
+		F26382B32CA7504A00EDDF84 /* Mouse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mouse.h; sourceTree = "<group>"; };
 		F2F733D92CA5C17300117E3C /* Sean16CPUApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sean16CPUApp.swift; sourceTree = "<group>"; };
 		F2F733DB2CA5C17300117E3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F2F733DD2CA5C17500117E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,13 +69,13 @@
 			path = Display;
 			sourceTree = "<group>";
 		};
-		F237BE462CAC63E300D353A6 /* Periphals */ = {
+		F237BE462CAC63E300D353A6 /* Peripherals */ = {
 			isa = PBXGroup;
 			children = (
-				F26382B32CA7504A00EDDF84 /* CursorTracker.h */,
-				F26382B12CA7502E00EDDF84 /* CursorTracker.m */,
+				F26382B32CA7504A00EDDF84 /* Mouse.h */,
+				F26382B12CA7502E00EDDF84 /* Mouse.m */,
 			);
-			path = Periphals;
+			path = Peripherals;
 			sourceTree = "<group>";
 		};
 		F237BE472CAC642800D353A6 /* CPU */ = {
@@ -143,7 +143,7 @@
 			children = (
 				F2F734192CA5F93900117E3C /* Kernel */,
 				F237BE422CAC63B700D353A6 /* Display */,
-				F237BE462CAC63E300D353A6 /* Periphals */,
+				F237BE462CAC63E300D353A6 /* Peripherals */,
 				F237BE472CAC642800D353A6 /* CPU */,
 				F237BE482CAC643C00D353A6 /* RAM */,
 				F237BE492CAC648600D353A6 /* GPU */,
@@ -232,7 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F26382B22CA7502E00EDDF84 /* CursorTracker.m in Sources */,
+				F26382B22CA7502E00EDDF84 /* Mouse.m in Sources */,
 				F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */,
 				F237BE452CAC63B700D353A6 /* Display.m in Sources */,
 				F2F733DC2CA5C17300117E3C /* ContentView.swift in Sources */,

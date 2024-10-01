@@ -7,4 +7,4 @@
 #include <stdint.h>
 #include "Sean16.h"
 #import <Display/Display.h>
-#import <Periphals/CursorTracker.h>
+#import <Peripherals/Mouse.h>
