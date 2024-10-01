@@ -134,7 +134,6 @@ void *execute(void *arg) {
                 break;
             case 0x09:
                 periphalMUS(proccess->peri, ptr1, ptr2);
-                printf("%d %d\n", *ptr1, *ptr2);
                 break;
             case 0xA0:
                 setpixel(*ptr1, *ptr2, *ptr3);
