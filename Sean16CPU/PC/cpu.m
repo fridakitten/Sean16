@@ -9,6 +9,8 @@
 #include "Kernel/proc.h"
 #include "gpu.h"
 
+#import <CoreGraphics/CoreGraphics.h>
+
 // CPU INSTRUCTIONS
 // EXIT  - 0x00
 // STORE - 0x01 <REGISTER> <VALUE>
@@ -45,7 +47,14 @@ void evaluate(int *i, int mode, int reg1, int reg2, int jmpaddr) {
     }
 }
 
-void *execute(/*proc *proccess*/void *arg) {
+void periphalMUS(page_t *periphals, uint16_t *x, uint16_t *y) {
+    CGPoint *mouseptr = *((CGPoint **)&periphals->memory[0][0]);
+    
+    *x = (uint16_t)mouseptr->x;
+    *y = (uint16_t)mouseptr->y;
+}
+
+void *execute(void *arg) {
     proc *proccess = (proc *)arg;
     
     for(int i = 0; i < S_CPU_REGISTER_MAX; i++) {
@@ -122,6 +131,10 @@ void *execute(/*proc *proccess*/void *arg) {
                 break;
             case 0x08:
                 evaluate(&i, *ptr1, *ptr2, *ptr3, *ptr4);
+                break;
+            case 0x09:
+                periphalMUS(proccess->peri, ptr1, ptr2);
+                printf("%d %d\n", *ptr1, *ptr2);
                 break;
             case 0xA0:
                 setpixel(*ptr1, *ptr2, *ptr3);
