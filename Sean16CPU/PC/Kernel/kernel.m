@@ -27,10 +27,11 @@ void kernel_init(uint8_t binmap[1000][6]) {
     proc *kernel_task = proc_fork(kernelmap);
     proc *child_task = proc_fork(binmap);
     
-    if (pthread_create(&child_task->thread, NULL, execute, (void *)child_task) != 0) {
+    /*if (pthread_create(&child_task->thread, NULL, execute, (void *)child_task) != 0) {
         perror("Failed to create thread");
     }
-    pthread_join(child_task->thread, NULL);
+    pthread_join(child_task->thread, NULL);*/
+    execute((void*)child_task);
 
     // DEINIT
     [mouse stopTracking];

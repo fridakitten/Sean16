@@ -77,7 +77,7 @@
     CGFloat clampedY = fmax(0, fmin(scaledY, 159.0));
 
     self.cursorPosition = NSMakePoint(clampedX, clampedY);
-    NSLog(@"Cursor Position (scaled to 255x155): %@", NSStringFromPoint(self.cursorPosition));
+    //NSLog(@"Cursor Position (scaled to 255x155): %@", NSStringFromPoint(self.cursorPosition));
 }
 
 - (void)hideCursor {

@@ -136,6 +136,9 @@ void *execute(/*proc *proccess*/void *arg) {
                 clearScreen();
                 break;
             case 0xB0:
+                sleep(*ptr1 * *ptr2);
+                break;
+            case 0xB1:
                 usleep(*ptr1 * *ptr2);
                 break;
             default:
