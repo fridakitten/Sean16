@@ -54,6 +54,12 @@ void periphalMUS(page_t *periphals, uint16_t *x, uint16_t *y) {
     *y = (uint16_t)mouseptr->y;
 }
 
+uint16_t* dummy(uint8_t *orig, uint16_t sub) {
+    uint16_t *dummy16 = malloc(sizeof(uint16_t));
+    *dummy16 = *orig - sub;
+    return dummy16;
+}
+
 void *execute(void *arg) {
     proc *proccess = (proc *)arg;
     
@@ -66,42 +72,38 @@ void *execute(void *arg) {
     uint16_t *ptr3 = malloc(sizeof(uint16_t));
     uint16_t *ptr4 = malloc(sizeof(uint16_t));
     uint16_t *ptr5 = malloc(sizeof(uint16_t));
+    uint8_t instruction;
     
     printf("[cpu] initialised\n");
     printf("[cpu] executing\n");
     
     for(int i = 0; i < 1000; i++) {
-        uint8_t instruction = *(proccess->page->memory[i][0]);
+        instruction = *(proccess->page->memory[i][0]);
         
         if (*(proccess->page->memory[i][1]) < 65) {
             ptr1 = &reg[*(proccess->page->memory[i][1])];
         } else {
-            *ptr1 = *(proccess->page->memory[i][1]) - 64;
-            //printf("[cpu] is val\n");
+            ptr1 = dummy(proccess->page->memory[i][1], 64);
         }
         if (*(proccess->page->memory[i][2]) < 65) {
             ptr2 = &reg[*(proccess->page->memory[i][2])];
         } else {
-            *ptr2 = *(proccess->page->memory[i][2]) - 64;
-            //printf("[cpu] is val\n");
+            ptr2 = dummy(proccess->page->memory[i][2], 64);
         }
         if (*(proccess->page->memory[i][3]) < 65) {
             ptr3 = &reg[*(proccess->page->memory[i][3])];
         } else {
-            *ptr3 = *(proccess->page->memory[i][3]) - 64;
-            //printf("[cpu] is val\n");
+            ptr3 = dummy(proccess->page->memory[i][3], 64);
         }
         if (*(proccess->page->memory[i][4]) < 65) {
             ptr4 = &reg[*(proccess->page->memory[i][4])];
         } else {
-            *ptr4 = *(proccess->page->memory[i][4]) - 64;
-            //printf("[cpu] is val\n");
+            ptr4 = dummy(proccess->page->memory[i][4], 64);
         }
         if (*(proccess->page->memory[i][5]) < 65) {
             ptr5 = &reg[*(proccess->page->memory[i][5])];
         } else {
-            *ptr5 = *(proccess->page->memory[i][5]) - 64;
-            //printf("[cpu] is val\n");
+            ptr5 = dummy(proccess->page->memory[i][5], 64);
         }
         
         switch(instruction) {
@@ -137,6 +139,7 @@ void *execute(void *arg) {
                 break;
             case 0xA0:
                 setpixel(*ptr1, *ptr2, *ptr3);
+                printf("[gpu setpx] -> %d %d -> color %d\n", *ptr1, *ptr2, *ptr3);
                 break;
             case 0xA1:
                 drawLine(*ptr1, *ptr2, *ptr3, *ptr4, *ptr5);
