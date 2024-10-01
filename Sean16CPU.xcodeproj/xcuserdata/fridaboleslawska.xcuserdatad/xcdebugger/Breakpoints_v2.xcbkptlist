@@ -34,38 +34,6 @@
             endingLineNumber = "216"
             landmarkName = "setpixel(x, y, color)"
             landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "96D9903C-3BD9-4C58-B505-6F37088A2B75 - 75bc54f28fedd81d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "setpixel"
-                  moduleName = "Sean16CPU"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fridaboleslawska/Documents/GitHub/Sean16/Sean16CPU/PC/gpu.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "216"
-                  endingLineNumber = "216"
-                  offsetFromSymbolStart = "60">
-               </Location>
-               <Location
-                  uuid = "96D9903C-3BD9-4C58-B505-6F37088A2B75 - 2def9b01dbe93c92"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__setpixel_block_invoke"
-                  moduleName = "Sean16CPU"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fridaboleslawska/Documents/GitHub/Sean16/Sean16CPU/PC/gpu.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "217"
-                  endingLineNumber = "217"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -81,6 +49,22 @@
             startingLineNumber = "78"
             endingLineNumber = "78"
             landmarkName = "execute(arg)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B733486-F887-46D1-B075-B4A2E06B8FAD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sean16CPU/PC/Kernel/kernel.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "kernel_init()"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
