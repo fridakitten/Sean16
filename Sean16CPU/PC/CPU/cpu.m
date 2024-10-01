@@ -109,7 +109,6 @@ void *execute(void *arg) {
                 break;
             case 0x07:
                 i = *ptr1 -1;
-                //printf("jmp to: %d\n", i -1);
                 break;
             case 0x08:
                 evaluate(&i, *ptr1, *ptr2, *ptr3, *ptr4);

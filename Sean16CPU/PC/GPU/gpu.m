@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #include "Display.h"
 
-// Complete character map for ASCII characters (0-127)
 const uint8_t font4x8[96][8] = {
     // Character 32: ' ' (space)
     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },
@@ -250,24 +249,19 @@ void drawLine(int x0, int y0, int x1, int y1, uint8_t color) {
 }
 
 void drawCharacter(uint8_t x, uint8_t y, char ascii, uint8_t color) {
-    // Ensure this runs on the main thread
     dispatch_async(dispatch_get_main_queue(), ^{
-        if (ascii < 32 || ascii > 127) return;  // Handle only printable ASCII (32-127)
+        if (ascii < 32 || ascii > 127) return;
 
-        // Fetch the character bitmap from the font table
         const uint8_t* characterBitmap = font4x8[ascii - 32];
 
-        // Loop over the 8 rows of the character
         for (uint8_t row = 0; row < 8; row++) {
             uint8_t rowBitmap = characterBitmap[row];
 
-            // Loop through all 4 bits (columns) in each row
             for (uint8_t col = 0; col < 5; col++) {
-                uint8_t pixelOn = (rowBitmap >> col) & 0x1; // Check each bit starting from the LSB
+                uint8_t pixelOn = (rowBitmap >> col) & 0x1;
 
-                // If pixel is on (1), we draw it with the specified color (isBlack)
                 if (pixelOn) {
-                    setpixel(x + (3 - col), y + row, color); // Flip to draw correctly from left to right
+                    setpixel(x + (3 - col), y + row, color);
                 }
             }
         }
