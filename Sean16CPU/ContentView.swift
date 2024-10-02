@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Cocoa
 import AppKit
 
 struct ScreenEmulatorViewWrapper: NSViewRepresentable {
@@ -35,7 +36,10 @@ struct ContentView: View {
                     .clipped()  // Ensure any overflow is clipped to fit within the window bounds
                     .onAppear {
                         DispatchQueue.global(qos: .background).async {
-                            kickstart()  // Start the emulator on appear
+                            let mainBundle = Bundle.main
+                            if let resourcePath = mainBundle.resourcePath {
+                                kickstart("\(resourcePath)/output.bin")  // Start the emulator on appear
+                            }
                         }
                     }
             }

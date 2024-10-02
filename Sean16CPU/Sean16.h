@@ -19,7 +19,4 @@
 #define S_RAMSIZE_MAX 64000000
 #define S_PAGE_SIZE 256
 
-//CPU
-void kickstart(void);
-
 #endif /* Sean16_h */

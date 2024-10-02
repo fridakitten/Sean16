@@ -8,3 +8,5 @@
 #include "Sean16.h"
 #import <Display/Display.h>
 #import <Peripherals/Mouse.h>
+
+void kickstart(NSString *path);

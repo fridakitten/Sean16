@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F237BE452CAC63B700D353A6 /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = F237BE432CAC63B700D353A6 /* Display.m */; };
 		F237BE4B2CAC6B5F00D353A6 /* peripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = F237BE4A2CAC6B5F00D353A6 /* peripheral.m */; };
+		F237BE5A2CAD7FA400D353A6 /* libasmfile.c in Sources */ = {isa = PBXBuildFile; fileRef = F237BE592CAD7FA400D353A6 /* libasmfile.c */; };
+		F237BE5D2CAD81BD00D353A6 /* output.bin in Resources */ = {isa = PBXBuildFile; fileRef = F237BE5C2CAD81BD00D353A6 /* output.bin */; };
 		F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382AE2CA7119C00EDDF84 /* gpu.m */; };
 		F26382B22CA7502E00EDDF84 /* Mouse.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382B12CA7502E00EDDF84 /* Mouse.m */; };
 		F2F733DA2CA5C17300117E3C /* Sean16CPUApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F733D92CA5C17300117E3C /* Sean16CPUApp.swift */; };
@@ -17,7 +19,7 @@
 		F2F733E12CA5C17500117E3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F733E02CA5C17500117E3C /* Preview Assets.xcassets */; };
 		F2F734092CA5C1B700117E3C /* cpu.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F734082CA5C1B700117E3C /* cpu.m */; };
 		F2F7340F2CA5CCE900117E3C /* UIConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7340E2CA5CCE900117E3C /* UIConsole.swift */; };
-		F2F734122CA5DCB300117E3C /* kickstart.c in Sources */ = {isa = PBXBuildFile; fileRef = F2F734112CA5DCB300117E3C /* kickstart.c */; };
+		F2F734122CA5DCB300117E3C /* kickstart.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F734112CA5DCB300117E3C /* kickstart.m */; };
 		F2F734152CA5DF1800117E3C /* ram.c in Sources */ = {isa = PBXBuildFile; fileRef = F2F734142CA5DF1800117E3C /* ram.c */; };
 		F2F734182CA5F60800117E3C /* kernel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F734172CA5F60800117E3C /* kernel.m */; };
 		F2F7341C2CA5F95A00117E3C /* proc.c in Sources */ = {isa = PBXBuildFile; fileRef = F2F7341B2CA5F95A00117E3C /* proc.c */; };
@@ -28,6 +30,9 @@
 		F237BE442CAC63B700D353A6 /* Display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
 		F237BE4A2CAC6B5F00D353A6 /* peripheral.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = peripheral.m; sourceTree = "<group>"; };
 		F237BE4C2CAC6B8000D353A6 /* peripheral.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = peripheral.h; sourceTree = "<group>"; };
+		F237BE592CAD7FA400D353A6 /* libasmfile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libasmfile.c; sourceTree = "<group>"; };
+		F237BE5B2CAD7FD600D353A6 /* libasmfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libasmfile.h; sourceTree = "<group>"; };
+		F237BE5C2CAD81BD00D353A6 /* output.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = output.bin; sourceTree = "<group>"; };
 		F26382AE2CA7119C00EDDF84 /* gpu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gpu.m; sourceTree = "<group>"; };
 		F26382B02CA712D400EDDF84 /* gpu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gpu.h; sourceTree = "<group>"; };
 		F26382B12CA7502E00EDDF84 /* Mouse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mouse.m; sourceTree = "<group>"; };
@@ -43,7 +48,7 @@
 		F2F734072CA5C1B700117E3C /* Sean16.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sean16.h; sourceTree = "<group>"; };
 		F2F734082CA5C1B700117E3C /* cpu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cpu.m; sourceTree = "<group>"; };
 		F2F7340E2CA5CCE900117E3C /* UIConsole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConsole.swift; sourceTree = "<group>"; };
-		F2F734112CA5DCB300117E3C /* kickstart.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kickstart.c; sourceTree = "<group>"; };
+		F2F734112CA5DCB300117E3C /* kickstart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kickstart.m; sourceTree = "<group>"; };
 		F2F734142CA5DF1800117E3C /* ram.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ram.c; sourceTree = "<group>"; };
 		F2F734162CA5F60800117E3C /* kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kernel.h; sourceTree = "<group>"; };
 		F2F734172CA5F60800117E3C /* kernel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kernel.m; sourceTree = "<group>"; };
@@ -109,6 +114,15 @@
 			path = GPU;
 			sourceTree = "<group>";
 		};
+		F237BE582CAD7FA400D353A6 /* libasmfile */ = {
+			isa = PBXGroup;
+			children = (
+				F237BE592CAD7FA400D353A6 /* libasmfile.c */,
+				F237BE5B2CAD7FD600D353A6 /* libasmfile.h */,
+			);
+			path = libasmfile;
+			sourceTree = "<group>";
+		};
 		F2F733CD2CA5C17300117E3C = {
 			isa = PBXGroup;
 			children = (
@@ -120,10 +134,12 @@
 		F2F733D82CA5C17300117E3C /* Sean16CPU */ = {
 			isa = PBXGroup;
 			children = (
+				F237BE5C2CAD81BD00D353A6 /* output.bin */,
 				F2F734052CA5C1B700117E3C /* Sean16.main.h */,
 				F2F734072CA5C1B700117E3C /* Sean16.h */,
 				F2F7340A2CA5C1F400117E3C /* PC */,
-				F2F734112CA5DCB300117E3C /* kickstart.c */,
+				F237BE582CAD7FA400D353A6 /* libasmfile */,
+				F2F734112CA5DCB300117E3C /* kickstart.m */,
 				F2F733D92CA5C17300117E3C /* Sean16CPUApp.swift */,
 				F2F733DB2CA5C17300117E3C /* ContentView.swift */,
 				F2F7340E2CA5CCE900117E3C /* UIConsole.swift */,
@@ -226,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2F733E12CA5C17500117E3C /* Preview Assets.xcassets in Resources */,
+				F237BE5D2CAD81BD00D353A6 /* output.bin in Resources */,
 				F2F733DE2CA5C17500117E3C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F26382B22CA7502E00EDDF84 /* Mouse.m in Sources */,
+				F237BE5A2CAD7FA400D353A6 /* libasmfile.c in Sources */,
 				F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */,
 				F237BE452CAC63B700D353A6 /* Display.m in Sources */,
 				F237BE4B2CAC6B5F00D353A6 /* peripheral.m in Sources */,
@@ -247,7 +265,7 @@
 				F2F734092CA5C1B700117E3C /* cpu.m in Sources */,
 				F2F7341C2CA5F95A00117E3C /* proc.c in Sources */,
 				F2F733DA2CA5C17300117E3C /* Sean16CPUApp.swift in Sources */,
-				F2F734122CA5DCB300117E3C /* kickstart.c in Sources */,
+				F2F734122CA5DCB300117E3C /* kickstart.m in Sources */,
 				F2F7340F2CA5CCE900117E3C /* UIConsole.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

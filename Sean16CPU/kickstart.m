@@ -22,12 +22,34 @@
 // GDC   - 0xA2 <REGISTER> <REGISTER> <REGISTER> <VALUE>
 // GCS   - 0xA3
 
+#import <Foundation/Foundation.h>
+
 #include "Sean16.h"
+#include "libasmfile/libasmfile.h"
 
 extern void kernel_init(uint8_t binmap[1000][6]);
 
-void kickstart(void) {
-    uint8_t binmap[1000][6] = {
+void kickstart(NSString *path) {
+    uint8_t **asmData = readasm([path UTF8String]);
+    
+    if (asmData == NULL) {
+        fprintf(stderr, "Error reading ASM data.\n");
+        return; // Exit if readasm fails
+    }
+    
+    uint8_t binmap[1000][6] = {0};
+
+    for (int i = 0; i < 1000; i++) {
+        for (int j = 0; j < 6; j++) {
+            if (asmData[i] != NULL && j < sizeof(asmData[i])/sizeof(asmData[i][0])) {
+                binmap[i][j] = asmData[i][j];
+            } else {
+                binmap[i][j] = 0;
+            }
+        }
+    }
+    
+    /*uint8_t binmap[1000][6] = {
         // INIT <0x41>
         {0x07, 0x49, 0x00, 0x00, 0x00, 0x00}, //41 JMP 0                       // IMPORTANT POINT TO => BTN LABEL
 
@@ -104,7 +126,7 @@ void kickstart(void) {
         
         // EXIT <0x78>
         {0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, //78
-    };
+    };*/
     
     kernel_init(binmap);
 }
