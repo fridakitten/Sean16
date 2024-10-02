@@ -267,3 +267,11 @@ void drawCharacter(uint8_t x, uint8_t y, char ascii, uint8_t color) {
         }
     });
 }
+
+uint8_t getColorOfPixel(uint8_t x, uint8_t y) {
+    MyScreenEmulatorView *screen = getEmulator();
+    
+    NSInteger color = [screen getPixelDataAtX:x y:y];
+    
+    return (uint8_t)color;
+}

@@ -30,6 +30,10 @@ void evaluate(int *i, int mode, int reg1, int reg2, int jmpaddr) {
             *i = jmpaddr - 1;
             //printf("jmp to: %d\n", jmpaddr - 1);
         }
+    } else if(mode == 3) { // EQUALS
+        if(reg1 != reg2) {
+            *i = jmpaddr - 1;
+        }
     }
 }
 
@@ -130,6 +134,9 @@ void *execute(void *arg) {
                 break;
             case 0xA3:
                 clearScreen();
+                break;
+            case 0xA4:
+                *ptr1 = getColorOfPixel(*ptr2, *ptr3);
                 break;
             case 0xB0:
                 sleep(*ptr1 * *ptr2);

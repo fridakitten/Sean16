@@ -10,6 +10,7 @@
 @interface MyScreenEmulatorView : NSView
 
 - (void)setPixelAtX:(int)x Y:(int)y colorIndex:(NSInteger)colorIndex;
+- (NSInteger)getPixelDataAtX:(int)x y:(int)y;
 - (void)clearScreen;
 - (void)drawCursorAtPosition:(NSPoint)position;
 

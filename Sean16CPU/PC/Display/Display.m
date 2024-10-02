@@ -118,7 +118,10 @@ NSColor *colorPalette[COLOR_COUNT];  // Array to store 256 colors
     }
 }
 
-// Draw the cursor at the specified position
+- (NSInteger)getPixelDataAtX:(int)x y:(int)y {
+    return pixelData[x][y];
+}
+
 - (void)drawCursorAtPosition:(NSPoint)position {
     // Draw a simple cursor as a rectangle at the cursor position
     [[NSColor whiteColor] setFill];
