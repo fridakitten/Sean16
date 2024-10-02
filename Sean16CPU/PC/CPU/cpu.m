@@ -119,9 +119,6 @@ void *execute(void *arg) {
                 break;
             case 0x09:
                 periphalMUS(proccess->peri, ptr1, ptr2, ptr3);
-                if(*ptr3 != 0) {
-                    printf("%d\n", *ptr3);
-                }
                 break;
             case 0xA0:
                 setpixel(*ptr1, *ptr2, *ptr3);
@@ -139,10 +136,10 @@ void *execute(void *arg) {
                 *ptr1 = getColorOfPixel(*ptr2, *ptr3);
                 break;
             case 0xB0:
-                sleep(*ptr1 * *ptr2);
+                sleep(*ptr1);
                 break;
             case 0xB1:
-                usleep(*ptr1 * *ptr2);
+                usleep(*ptr1 * *ptr2 * *ptr3);
                 break;
             default:
                 printf("[cpu] 0x%02x is illegal\n", i);
