@@ -9,10 +9,13 @@
 #include "kernel.h"
 #import <Cocoa/Cocoa.h>
 #import <Peripherals/Mouse.h>
+#import <GPU/gpu.h>
 
 extern void *execute(void *arg);
 
 void kernel_init(uint8_t binmap[1000][6]) {
+    clearScreen();
+    
     // INIT
     CursorTracker *mouse = [[CursorTracker alloc] init];
     [mouse startTracking];
@@ -33,4 +36,6 @@ void kernel_init(uint8_t binmap[1000][6]) {
     
     // killing task
     proc_kill(child_task);
+    
+    clearScreen();
 }

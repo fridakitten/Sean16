@@ -91,6 +91,7 @@ NSColor *colorPalette[COLOR_COUNT];  // Array to store 256 colors
 
 - (void)clearScreen {
     memset(pixelData, -1, sizeof(pixelData)); // Reset all pixels to "off"
+    [self setNeedsDisplay:YES];
 }
 
 - (void)setPixelAtX:(int)x Y:(int)y colorIndex:(NSInteger)colorIndex {
