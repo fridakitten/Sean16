@@ -5,8 +5,6 @@
 #import "FPS.h"
 
 int main(int argc, const char * argv[]) {
-    NSStatusBar *status = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    
     NSWindow *window = [[NSWindow alloc] initWithContentRect:NSMakeRect(0, 0, 510, 510)
                                                    styleMask:(NSWindowStyleMaskTitled)
                                                      backing:NSBackingStoreBuffered

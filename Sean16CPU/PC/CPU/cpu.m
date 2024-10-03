@@ -125,23 +125,23 @@ void *execute(void *arg) {
                 rdrand(ptr1, *ptr2, *ptr3);
                 break;
             case 0xA0:
-                usleep(1);
+                usleep(50);
                 setpixel(*ptr1, *ptr2, *ptr3);
                 break;
             case 0xA1:
-                usleep(1);
+                usleep(50);
                 drawLine(*ptr1, *ptr2, *ptr3, *ptr4, *ptr5);
                 break;
             case 0xA2:
-                usleep(1);
+                usleep(50);
                 drawCharacter(*ptr1, *ptr2, *ptr3, *ptr4);
                 break;
             case 0xA3:
-                usleep(1);
+                usleep(50);
                 clearScreen();
                 break;
             case 0xA4:
-                usleep(1);
+                usleep(50);
                 *ptr1 = getColorOfPixel(*ptr2, *ptr3);
                 break;
             case 0xB0:
