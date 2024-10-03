@@ -125,15 +125,15 @@ void *execute(void *arg) {
                 rdrand(ptr1, *ptr2, *ptr3);
                 break;
             case 0xA0:
-                usleep(500);
+                usleep(100);
                 setpixel(*ptr1, *ptr2, *ptr3);
                 break;
             case 0xA1:
-                usleep(500);
+                usleep(100);
                 drawLine(*ptr1, *ptr2, *ptr3, *ptr4, *ptr5);
                 break;
             case 0xA2:
-                usleep(500);
+                usleep(100);
                 drawCharacter(*ptr1, *ptr2, *ptr3, *ptr4);
                 break;
             case 0xA3:
