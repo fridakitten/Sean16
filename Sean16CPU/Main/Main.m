@@ -40,15 +40,19 @@ int main(int argc, const char * argv[]) {
     [app setDelegate:delegate];
     
     // Load the main window from the xib file
-    NSWindow *window = [[NSWindow alloc] initWithContentRect:NSMakeRect(0, 0, 255, 255)
+    NSWindow *window = [[NSWindow alloc] initWithContentRect:NSMakeRect(0, 0, 510, 510)
                                                    styleMask:(NSWindowStyleMaskTitled |
                                                               NSWindowStyleMaskClosable)
                                                      backing:NSBackingStoreBuffered
                                                        defer:NO];
     
     MyScreenEmulatorView *screen = getEmulator();
-    [screen setFrame:NSMakeRect(0, 0, 255, 255)];
-    [[window contentView] addSubview:screen];
+    
+    // Set the frame size of the view (original resolution)
+    [screen setFrame:NSMakeRect(0, 0, 510, 510)];
+
+    [window.contentView addSubview:screen];
+    [window setTitle:@"Sean16"];
     
     // Make the window visible
     [window makeKeyAndOrderFront:nil];
@@ -57,7 +61,7 @@ int main(int argc, const char * argv[]) {
     NSString *executablePath = [NSString stringWithFormat:@"%@/output.bin", [mainBundle resourcePath]];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        kickstart(executablePath);
+        kickstart(executablePath, window);
     });
 
     // Run the application

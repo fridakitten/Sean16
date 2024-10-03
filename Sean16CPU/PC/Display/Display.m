@@ -10,7 +10,8 @@
 
 #define SCREEN_WIDTH 254
 #define SCREEN_HEIGHT 254
-#define COLOR_COUNT 256  // Support for 256 colors
+#define COLOR_COUNT 256
+#define SCALE_FACTOR 2.0
 
 MyScreenEmulatorView *screen = NULL;
 
@@ -106,14 +107,17 @@ NSColor *colorPalette[COLOR_COUNT];  // Array to store 256 colors
     // Fill the entire view with black (or clear)
     [[NSColor blackColor] setFill];
     NSRectFill(dirtyRect);
-    
+
+    // Calculate the size of each pixel when scaled
+    CGFloat scaledPixelSize = 1.0 * SCALE_FACTOR; // Scale the pixel size
+
     for (int x = 0; x < SCREEN_WIDTH; x++) {
         for (int y = 0; y < SCREEN_HEIGHT; y++) {
             NSInteger colorIndex = pixelData[x][y];
             if (colorIndex != -1) { // Only draw if the color index is valid
-                NSRect pixelRect = NSMakeRect(x, y, 1, 1);
+                NSRect pixelRect = NSMakeRect(x * scaledPixelSize, y * scaledPixelSize, scaledPixelSize, scaledPixelSize);
                 [colorPalette[colorIndex] setFill];  // Set color for the pixel
-                NSRectFill(pixelRect);  // Draw the pixel
+                NSRectFill(pixelRect);  // Draw the scaled pixel
             }
         }
     }

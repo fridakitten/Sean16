@@ -13,11 +13,11 @@
 
 extern void *execute(void *arg);
 
-void kernel_init(uint8_t binmap[1000][6]) {
+void kernel_init(uint8_t binmap[1000][6], NSWindow *window) {
     clearScreen();
     
     // INIT
-    CursorTracker *mouse = [[CursorTracker alloc] init];
+    CursorTracker *mouse = [[CursorTracker alloc] initWithWindow:window];
     [mouse startTracking];
     
     // fork process
