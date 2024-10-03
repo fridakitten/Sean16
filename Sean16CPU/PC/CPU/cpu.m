@@ -93,7 +93,7 @@ void *execute(void *arg) {
         switch(instruction) {
             case 0x00:
                 printf("[cpu] exited on line %d\n", i);
-                return NULL;
+                exit(0);
             case 0x01:
                 *ptr1 = *ptr2;
                 break;
@@ -125,21 +125,23 @@ void *execute(void *arg) {
                 rdrand(ptr1, *ptr2, *ptr3);
                 break;
             case 0xA0:
-                usleep(100);
+                usleep(1);
                 setpixel(*ptr1, *ptr2, *ptr3);
                 break;
             case 0xA1:
-                usleep(100);
+                usleep(1);
                 drawLine(*ptr1, *ptr2, *ptr3, *ptr4, *ptr5);
                 break;
             case 0xA2:
-                usleep(100);
+                usleep(1);
                 drawCharacter(*ptr1, *ptr2, *ptr3, *ptr4);
                 break;
             case 0xA3:
+                usleep(1);
                 clearScreen();
                 break;
             case 0xA4:
+                usleep(1);
                 *ptr1 = getColorOfPixel(*ptr2, *ptr3);
                 break;
             case 0xB0:

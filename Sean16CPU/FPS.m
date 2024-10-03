@@ -81,7 +81,7 @@ static CVReturn displayLinkCallback(CVDisplayLinkRef displayLink,
 
         // Update the window title with the current FPS
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.window.title = [NSString stringWithFormat:@"FPS: %.1f", fps];
+            self.window.title = [NSString stringWithFormat:@"Sean16 [FPS: %.1f]", fps];
         });
     }
 }

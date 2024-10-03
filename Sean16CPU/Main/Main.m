@@ -4,60 +4,26 @@
 #import "Sean16.main.h"
 #import "FPS.h"
 
-// Declare the AppDelegate class
-@interface AppDelegate : NSObject <NSApplicationDelegate>
-
-@property (assign) IBOutlet NSWindow *window;
-@property (strong) IBOutlet NSTextField *label;
-
-@end
-
-@implementation AppDelegate
-
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // This method is called when the application has finished launching
-    NSLog(@"Application has launched!");
-    
-    // Set the label's text
-    [self.label setStringValue:@"Hello, World!"];
-}
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // This method is called when the application is about to terminate
-    NSLog(@"Application is about to terminate!");
-}
-
-@end
-
-// Main function - entry point of the application
 int main(int argc, const char * argv[]) {
-    // Create the application instance
-    NSApplication *app = [NSApplication sharedApplication];
+    NSStatusBar *status = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     
-    // Create the AppDelegate instance
-    AppDelegate *delegate = [[AppDelegate alloc] init];
-    
-    // Set the delegate for the application
-    [app setDelegate:delegate];
-    
-    // Load the main window from the xib file
     NSWindow *window = [[NSWindow alloc] initWithContentRect:NSMakeRect(0, 0, 510, 510)
-                                                   styleMask:(NSWindowStyleMaskTitled |
-                                                              NSWindowStyleMaskClosable)
+                                                   styleMask:(NSWindowStyleMaskTitled)
                                                      backing:NSBackingStoreBuffered
                                                        defer:NO];
+    // Settings
+    [window setTitle:@"Sean16"];
     
+    // Periphal Screen
     MyScreenEmulatorView *screen = getEmulator();
-    
-    // Set the frame size of the view (original resolution)
     [screen setFrame:NSMakeRect(0, 0, 510, 510)];
-
     [window.contentView addSubview:screen];
     
+    // FPS Counter
     FPSCounter *fps = [[FPSCounter alloc] initWithWindow:window];
     [fps startTrackingFPS];
     
-    // Make the window visible
+    // Window is ready 2go
     [window makeKeyAndOrderFront:nil];
     
     NSBundle *mainBundle = [NSBundle mainBundle];
@@ -67,6 +33,5 @@ int main(int argc, const char * argv[]) {
         kickstart(executablePath, window);
     });
 
-    // Run the application
     return NSApplicationMain(argc, argv);
 }
