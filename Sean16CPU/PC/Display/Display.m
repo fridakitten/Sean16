@@ -9,7 +9,7 @@
 #import <AppKit/AppKit.h> // Ensure AppKit is imported
 
 #define SCREEN_WIDTH 254
-#define SCREEN_HEIGHT 159
+#define SCREEN_HEIGHT 254
 #define COLOR_COUNT 256  // Support for 256 colors
 
 MyScreenEmulatorView *screen = NULL;

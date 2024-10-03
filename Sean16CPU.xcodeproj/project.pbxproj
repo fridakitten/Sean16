@@ -13,12 +13,10 @@
 		F237BE5D2CAD81BD00D353A6 /* output.bin in Resources */ = {isa = PBXBuildFile; fileRef = F237BE5C2CAD81BD00D353A6 /* output.bin */; };
 		F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382AE2CA7119C00EDDF84 /* gpu.m */; };
 		F26382B22CA7502E00EDDF84 /* Mouse.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382B12CA7502E00EDDF84 /* Mouse.m */; };
-		F2F733DA2CA5C17300117E3C /* Sean16CPUApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F733D92CA5C17300117E3C /* Sean16CPUApp.swift */; };
-		F2F733DC2CA5C17300117E3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F733DB2CA5C17300117E3C /* ContentView.swift */; };
+		F2758B0A2CAE249700ED6D37 /* Main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2758B092CAE249700ED6D37 /* Main.m */; };
 		F2F733DE2CA5C17500117E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F733DD2CA5C17500117E3C /* Assets.xcassets */; };
 		F2F733E12CA5C17500117E3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F733E02CA5C17500117E3C /* Preview Assets.xcassets */; };
 		F2F734092CA5C1B700117E3C /* cpu.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F734082CA5C1B700117E3C /* cpu.m */; };
-		F2F7340F2CA5CCE900117E3C /* UIConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7340E2CA5CCE900117E3C /* UIConsole.swift */; };
 		F2F734122CA5DCB300117E3C /* kickstart.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F734112CA5DCB300117E3C /* kickstart.m */; };
 		F2F734152CA5DF1800117E3C /* ram.c in Sources */ = {isa = PBXBuildFile; fileRef = F2F734142CA5DF1800117E3C /* ram.c */; };
 		F2F734182CA5F60800117E3C /* kernel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F734172CA5F60800117E3C /* kernel.m */; };
@@ -37,8 +35,7 @@
 		F26382B02CA712D400EDDF84 /* gpu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gpu.h; sourceTree = "<group>"; };
 		F26382B12CA7502E00EDDF84 /* Mouse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mouse.m; sourceTree = "<group>"; };
 		F26382B32CA7504A00EDDF84 /* Mouse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mouse.h; sourceTree = "<group>"; };
-		F2F733D92CA5C17300117E3C /* Sean16CPUApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sean16CPUApp.swift; sourceTree = "<group>"; };
-		F2F733DB2CA5C17300117E3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F2758B092CAE249700ED6D37 /* Main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Main.m; sourceTree = "<group>"; };
 		F2F733DD2CA5C17500117E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2F733E02CA5C17500117E3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2F733E22CA5C17500117E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,7 +44,6 @@
 		F2F734062CA5C1B700117E3C /* Sean16CPU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sean16CPU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F734072CA5C1B700117E3C /* Sean16.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sean16.h; sourceTree = "<group>"; };
 		F2F734082CA5C1B700117E3C /* cpu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cpu.m; sourceTree = "<group>"; };
-		F2F7340E2CA5CCE900117E3C /* UIConsole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConsole.swift; sourceTree = "<group>"; };
 		F2F734112CA5DCB300117E3C /* kickstart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kickstart.m; sourceTree = "<group>"; };
 		F2F734142CA5DF1800117E3C /* ram.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ram.c; sourceTree = "<group>"; };
 		F2F734162CA5F60800117E3C /* kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kernel.h; sourceTree = "<group>"; };
@@ -80,8 +76,8 @@
 		F237BE462CAC63E300D353A6 /* Peripherals */ = {
 			isa = PBXGroup;
 			children = (
-				F26382B32CA7504A00EDDF84 /* Mouse.h */,
 				F26382B12CA7502E00EDDF84 /* Mouse.m */,
+				F26382B32CA7504A00EDDF84 /* Mouse.h */,
 			);
 			path = Peripherals;
 			sourceTree = "<group>";
@@ -123,6 +119,14 @@
 			path = libasmfile;
 			sourceTree = "<group>";
 		};
+		F2758B082CAE248500ED6D37 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F2758B092CAE249700ED6D37 /* Main.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		F2F733CD2CA5C17300117E3C = {
 			isa = PBXGroup;
 			children = (
@@ -137,12 +141,10 @@
 				F237BE5C2CAD81BD00D353A6 /* output.bin */,
 				F2F734052CA5C1B700117E3C /* Sean16.main.h */,
 				F2F734072CA5C1B700117E3C /* Sean16.h */,
+				F2758B082CAE248500ED6D37 /* Main */,
 				F2F7340A2CA5C1F400117E3C /* PC */,
 				F237BE582CAD7FA400D353A6 /* libasmfile */,
 				F2F734112CA5DCB300117E3C /* kickstart.m */,
-				F2F733D92CA5C17300117E3C /* Sean16CPUApp.swift */,
-				F2F733DB2CA5C17300117E3C /* ContentView.swift */,
-				F2F7340E2CA5CCE900117E3C /* UIConsole.swift */,
 				F2F733DD2CA5C17500117E3C /* Assets.xcassets */,
 				F2F733E22CA5C17500117E3C /* Info.plist */,
 				F2F733E32CA5C17500117E3C /* Sean16CPU.entitlements */,
@@ -258,15 +260,13 @@
 				F237BE5A2CAD7FA400D353A6 /* libasmfile.c in Sources */,
 				F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */,
 				F237BE452CAC63B700D353A6 /* Display.m in Sources */,
+				F2758B0A2CAE249700ED6D37 /* Main.m in Sources */,
 				F237BE4B2CAC6B5F00D353A6 /* peripheral.m in Sources */,
-				F2F733DC2CA5C17300117E3C /* ContentView.swift in Sources */,
 				F2F734182CA5F60800117E3C /* kernel.m in Sources */,
 				F2F734152CA5DF1800117E3C /* ram.c in Sources */,
 				F2F734092CA5C1B700117E3C /* cpu.m in Sources */,
 				F2F7341C2CA5F95A00117E3C /* proc.c in Sources */,
-				F2F733DA2CA5C17300117E3C /* Sean16CPUApp.swift in Sources */,
 				F2F734122CA5DCB300117E3C /* kickstart.m in Sources */,
-				F2F7340F2CA5CCE900117E3C /* UIConsole.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
