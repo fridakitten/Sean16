@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)stopTracking;
 - (void)activateRestrictedMode;
 - (void)resumeTracking;
+- (void)unhideCursor;
+- (void)hideCursor;
 
 // Methods for mouse button state
 - (NSInteger *)getLastMouseButtonState;

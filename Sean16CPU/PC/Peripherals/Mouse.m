@@ -5,6 +5,7 @@
 @property (nonatomic, strong) id trackingHandler;
 @property (nonatomic, strong) id shortcutEventHandler;
 @property (nonatomic, assign) BOOL isTrackingPaused;
+@property (nonatomic, assign) BOOL cursorHidden;
 
 @end
 
@@ -63,6 +64,20 @@
     }
 }
 
+- (void)hideCursor {
+    if (!self.cursorHidden) {
+        [NSCursor hide];
+        self.cursorHidden = YES;
+    }
+}
+
+- (void)unhideCursor {
+    if (self.cursorHidden) {
+        [NSCursor unhide];
+        self.cursorHidden = NO;
+    }
+}
+
 - (void)updateCursorPosition:(NSEvent *)event {
     // Get the window's frame, bounds, and position
     NSRect windowFrame = [self.window frame];
@@ -90,9 +105,12 @@
         self.cursorPosition = NSMakePoint(clampedX, clampedY);
         
         //NSLog(@"Cursor position (scaled): (%.2f, %.2f)", clampedX, clampedY);
+        [self hideCursor];
     } else {
+        
         // Cursor is outside the window, stop tracking
         //NSLog(@"Cursor outside the window.");
+        [self unhideCursor];
     }
 }
 
