@@ -7,6 +7,7 @@
 
 #include "../Sean16.h"
 #include "peripheral.h"
+#include "rdrand.h"
 #include <Kernel/kernel.h>
 #include <GPU/gpu.h>
 #import <CoreGraphics/CoreGraphics.h>
@@ -119,6 +120,9 @@ void *execute(void *arg) {
                 break;
             case 0x09:
                 periphalMUS(proccess->peri, ptr1, ptr2, ptr3);
+                break;
+            case 0x0A:
+                rdrand(ptr1, *ptr2, *ptr3);
                 break;
             case 0xA0:
                 usleep(500);

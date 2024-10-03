@@ -13,6 +13,7 @@
 		F237BE5D2CAD81BD00D353A6 /* output.bin in Resources */ = {isa = PBXBuildFile; fileRef = F237BE5C2CAD81BD00D353A6 /* output.bin */; };
 		F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382AE2CA7119C00EDDF84 /* gpu.m */; };
 		F26382B22CA7502E00EDDF84 /* Mouse.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382B12CA7502E00EDDF84 /* Mouse.m */; };
+		F271594E2CAED59F00B083D7 /* rdrand.c in Sources */ = {isa = PBXBuildFile; fileRef = F271594D2CAED59F00B083D7 /* rdrand.c */; };
 		F2758B0A2CAE249700ED6D37 /* Main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2758B092CAE249700ED6D37 /* Main.m */; };
 		F2F733DE2CA5C17500117E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F733DD2CA5C17500117E3C /* Assets.xcassets */; };
 		F2F733E12CA5C17500117E3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F733E02CA5C17500117E3C /* Preview Assets.xcassets */; };
@@ -35,6 +36,8 @@
 		F26382B02CA712D400EDDF84 /* gpu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gpu.h; sourceTree = "<group>"; };
 		F26382B12CA7502E00EDDF84 /* Mouse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mouse.m; sourceTree = "<group>"; };
 		F26382B32CA7504A00EDDF84 /* Mouse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mouse.h; sourceTree = "<group>"; };
+		F271594D2CAED59F00B083D7 /* rdrand.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rdrand.c; sourceTree = "<group>"; };
+		F271594F2CAED5BB00B083D7 /* rdrand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rdrand.h; sourceTree = "<group>"; };
 		F2758B092CAE249700ED6D37 /* Main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Main.m; sourceTree = "<group>"; };
 		F2F733DD2CA5C17500117E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2F733E02CA5C17500117E3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -88,6 +91,8 @@
 				F2F734082CA5C1B700117E3C /* cpu.m */,
 				F237BE4A2CAC6B5F00D353A6 /* peripheral.m */,
 				F237BE4C2CAC6B8000D353A6 /* peripheral.h */,
+				F271594D2CAED59F00B083D7 /* rdrand.c */,
+				F271594F2CAED5BB00B083D7 /* rdrand.h */,
 			);
 			path = CPU;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			files = (
 				F26382B22CA7502E00EDDF84 /* Mouse.m in Sources */,
 				F237BE5A2CAD7FA400D353A6 /* libasmfile.c in Sources */,
+				F271594E2CAED59F00B083D7 /* rdrand.c in Sources */,
 				F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */,
 				F237BE452CAC63B700D353A6 /* Display.m in Sources */,
 				F2758B0A2CAE249700ED6D37 /* Main.m in Sources */,

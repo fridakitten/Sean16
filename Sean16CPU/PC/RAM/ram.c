@@ -19,7 +19,7 @@ page_t* genpage(void) {
     }
 
     for (int i = 0; i < 6; i++) {
-        for (int j = current_addr + 0; j < current_addr + 1024; j++) {
+        for (int j = current_addr; j < current_addr + 1024; j++) {
             page->memory[i][j] = &RAMDISK[i * 1024 + j];
         }
     }
