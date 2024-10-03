@@ -5,23 +5,6 @@
 //  Created by Frida Boleslawska on 26.09.24.
 //
 
-// CPU INSTRUCTIONS
-// EXIT  - 0x00
-// STORE - 0x01 <REGISTER> <VALUE>
-// ADD   - 0x02 <REGISTER> <REGISTER>
-// SUB   - 0x03 <REGISTER> <REGISTER>
-// MUL   - 0x04 <REGISTER> <REGISTER>
-// DIV   - 0x05 <REGISTER> <REGISTER>
-// DSP   - 0x06 <REGISTER>
-// JMP   - 0x07 <REGISTER>
-// IF    - 0x08 <MODE>     <REGISTER> <REGISTER> <REGISTER>
-
-// GPU INSTRUCTIONS
-// GPX   - 0xA0 <REGISTER> <REGISTER> <REGISTER> <VALUE>
-// GLI   - 0xA1 <REGISTER> <REGISTER> <REGISTER> <REGISTER>
-// GDC   - 0xA2 <REGISTER> <REGISTER> <REGISTER> <VALUE>
-// GCS   - 0xA3
-
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
 
