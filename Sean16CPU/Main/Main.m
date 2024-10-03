@@ -9,6 +9,19 @@ int main(int argc, const char * argv[]) {
                                                    styleMask:(NSWindowStyleMaskTitled)
                                                      backing:NSBackingStoreBuffered
                                                        defer:NO];
+    
+    NSMenu      *menu;
+    NSMenuItem  *menuItem;
+
+    [NSApp setMainMenu:[[NSMenu alloc] init]];
+
+    // Application menu
+    menu = [[NSMenu alloc] initWithTitle:@""];
+    [menu addItemWithTitle:@"Quit Sean16CPU" action:@selector(terminate:) keyEquivalent:@"q"];
+    menuItem = [[NSMenuItem alloc] initWithTitle:@"Apple" action:nil keyEquivalent:@""];
+    [menuItem setSubmenu:menu];
+    [[NSApp mainMenu] addItem:menuItem];
+    
     // Settings
     [window setTitle:@"Sean16"];
     
