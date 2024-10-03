@@ -31,7 +31,7 @@
 extern void kernel_init(uint8_t binmap[1000][6], NSWindow *window);
 
 void kickstart(NSString *path, NSWindow *window) {
-    /*uint8_t **asmData = readasm([path UTF8String]);
+    uint8_t **asmData = readasm([path UTF8String]);
     
     if (asmData == NULL) {
         fprintf(stderr, "Error reading ASM data.\n");
@@ -48,9 +48,9 @@ void kickstart(NSString *path, NSWindow *window) {
                 binmap[i][j] = 0;
             }
         }
-    }*/
+    }
     
-    uint8_t binmap[1000][6] = {
+    /*uint8_t binmap[1000][6] = {
         // INIT <0x41>
         {0x07, 0x49, 0x00, 0x00, 0x00, 0x00}, //41 JMP 0                       // IMPORTANT POINT TO => BTN LABEL
 
@@ -127,7 +127,7 @@ void kickstart(NSString *path, NSWindow *window) {
         
         // EXIT <0x78>
         {0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, //78
-    };
+    };*/
     
     kernel_init(binmap, window);
 }
