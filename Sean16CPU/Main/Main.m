@@ -2,6 +2,7 @@
 #import <Display/Display.h>
 #import <Foundation/Foundation.h>
 #import "Sean16.main.h"
+#import "FPS.h"
 
 // Declare the AppDelegate class
 @interface AppDelegate : NSObject <NSApplicationDelegate>
@@ -52,7 +53,9 @@ int main(int argc, const char * argv[]) {
     [screen setFrame:NSMakeRect(0, 0, 510, 510)];
 
     [window.contentView addSubview:screen];
-    [window setTitle:@"Sean16"];
+    
+    FPSCounter *fps = [[FPSCounter alloc] initWithWindow:window];
+    [fps startTrackingFPS];
     
     // Make the window visible
     [window makeKeyAndOrderFront:nil];

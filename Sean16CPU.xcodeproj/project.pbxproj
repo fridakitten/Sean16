@@ -14,6 +14,7 @@
 		F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382AE2CA7119C00EDDF84 /* gpu.m */; };
 		F26382B22CA7502E00EDDF84 /* Mouse.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382B12CA7502E00EDDF84 /* Mouse.m */; };
 		F271594E2CAED59F00B083D7 /* rdrand.c in Sources */ = {isa = PBXBuildFile; fileRef = F271594D2CAED59F00B083D7 /* rdrand.c */; };
+		F27159512CAEDB0B00B083D7 /* FPS.m in Sources */ = {isa = PBXBuildFile; fileRef = F27159502CAEDB0B00B083D7 /* FPS.m */; };
 		F2758B0A2CAE249700ED6D37 /* Main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2758B092CAE249700ED6D37 /* Main.m */; };
 		F2F733DE2CA5C17500117E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F733DD2CA5C17500117E3C /* Assets.xcassets */; };
 		F2F733E12CA5C17500117E3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F733E02CA5C17500117E3C /* Preview Assets.xcassets */; };
@@ -38,6 +39,8 @@
 		F26382B32CA7504A00EDDF84 /* Mouse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mouse.h; sourceTree = "<group>"; };
 		F271594D2CAED59F00B083D7 /* rdrand.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rdrand.c; sourceTree = "<group>"; };
 		F271594F2CAED5BB00B083D7 /* rdrand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rdrand.h; sourceTree = "<group>"; };
+		F27159502CAEDB0B00B083D7 /* FPS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPS.m; sourceTree = "<group>"; };
+		F27159522CAEDB1B00B083D7 /* FPS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPS.h; sourceTree = "<group>"; };
 		F2758B092CAE249700ED6D37 /* Main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Main.m; sourceTree = "<group>"; };
 		F2F733DD2CA5C17500117E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2F733E02CA5C17500117E3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				F237BE5C2CAD81BD00D353A6 /* output.bin */,
 				F2F734052CA5C1B700117E3C /* Sean16.main.h */,
 				F2F734072CA5C1B700117E3C /* Sean16.h */,
+				F27159502CAEDB0B00B083D7 /* FPS.m */,
+				F27159522CAEDB1B00B083D7 /* FPS.h */,
 				F2758B082CAE248500ED6D37 /* Main */,
 				F2F7340A2CA5C1F400117E3C /* PC */,
 				F237BE582CAD7FA400D353A6 /* libasmfile */,
@@ -262,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F26382B22CA7502E00EDDF84 /* Mouse.m in Sources */,
+				F27159512CAEDB0B00B083D7 /* FPS.m in Sources */,
 				F237BE5A2CAD7FA400D353A6 /* libasmfile.c in Sources */,
 				F271594E2CAED59F00B083D7 /* rdrand.c in Sources */,
 				F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */,
