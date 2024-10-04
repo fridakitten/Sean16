@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CursorTracker : NSObject
 
 @property (nonatomic, assign) NSPoint cursorPosition;
-@property (nonatomic, assign) NSInteger *lastMouseButtonState;
+@property (nonatomic, assign) NSInteger lastMouseButtonState;
 @property (nonatomic, weak) NSWindow *window;
 
 // Designated initializer
@@ -32,4 +32,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-CursorTracker *getTracker(void *arg);
+CursorTracker * _Nullable getTracker(void * _Nullable arg);
