@@ -7,10 +7,11 @@
 
 #import "../Sean16.main.h"
 #import "Controller.h"
+#import "Console.h"
 
 @implementation Controller : NSObject
 
-- (void) menuInit:(NSWindow *)window {
+- (void) menuInit:(NSWindow*)window logwindow:(NSWindow*)logwindow {
     NSMenu      *menu;
     NSMenuItem  *menuItem;
 
@@ -23,15 +24,23 @@
     [menuItem setSubmenu:menu];
     [[NSApp mainMenu] addItem:menuItem];
     
-    // Utility Menu - CPU
     menu = [[NSMenu alloc] initWithTitle:@"CPU"];
-    
-    // Here, ensure that the selector matches the method signature `openimg:`
     [menu addItemWithTitle:@"Run Executable" action:@selector(openimg:) keyEquivalent:@""];
     
     menuItem = [[NSMenuItem alloc] initWithTitle:@"CPU" action:nil keyEquivalent:@""];
     [menuItem setSubmenu:menu];
     [[NSApp mainMenu] addItem:menuItem];
+    
+    menu = [[NSMenu alloc] initWithTitle:@"Log"];
+    [menu addItemWithTitle:@"Show Log" action:@selector(showlog:) keyEquivalent:@""];
+    [menu addItemWithTitle:@"Hide Log" action:@selector(hidelog:) keyEquivalent:@""];
+    
+    menuItem = [[NSMenuItem alloc] initWithTitle:@"Log" action:nil keyEquivalent:@""];
+    [menuItem setSubmenu:menu];
+    [[NSApp mainMenu] addItem:menuItem];
+    
+    _window = window;
+    _logwindow = logwindow;
 }
 
 - (void) openimg:(id)sender {
@@ -49,6 +58,14 @@
             });
         }
     }];
+}
+
+- (void) showlog:(id)sender {
+    [_logwindow makeKeyAndOrderFront:nil];
+}
+
+- (void) hidelog:(id)sender {
+    [_logwindow orderOut:nil];
 }
 
 @end

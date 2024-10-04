@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F21A006D2CB03E8500357224 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = F21A006C2CB03E8500357224 /* Controller.m */; };
+		F21A00722CB07A3D00357224 /* Console.m in Sources */ = {isa = PBXBuildFile; fileRef = F21A00712CB07A3D00357224 /* Console.m */; };
 		F237BE452CAC63B700D353A6 /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = F237BE432CAC63B700D353A6 /* Display.m */; };
 		F237BE4B2CAC6B5F00D353A6 /* peripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = F237BE4A2CAC6B5F00D353A6 /* peripheral.m */; };
 		F237BE5A2CAD7FA400D353A6 /* libasmfile.c in Sources */ = {isa = PBXBuildFile; fileRef = F237BE592CAD7FA400D353A6 /* libasmfile.c */; };
@@ -29,6 +30,8 @@
 		F21A006C2CB03E8500357224 /* Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
 		F21A006E2CB03F4F00357224 /* Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		F21A006F2CB0500400357224 /* cpu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cpu.h; sourceTree = "<group>"; };
+		F21A00712CB07A3D00357224 /* Console.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Console.m; sourceTree = "<group>"; };
+		F21A00732CB07A8F00357224 /* Console.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Console.h; sourceTree = "<group>"; };
 		F237BE432CAC63B700D353A6 /* Display.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Display.m; sourceTree = "<group>"; };
 		F237BE442CAC63B700D353A6 /* Display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
 		F237BE4A2CAC6B5F00D353A6 /* peripheral.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = peripheral.m; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				F2758B092CAE249700ED6D37 /* Main.m */,
 				F21A006C2CB03E8500357224 /* Controller.m */,
 				F21A006E2CB03F4F00357224 /* Controller.h */,
+				F21A00712CB07A3D00357224 /* Console.m */,
+				F21A00732CB07A8F00357224 /* Console.h */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 				F2758B0A2CAE249700ED6D37 /* Main.m in Sources */,
 				F237BE4B2CAC6B5F00D353A6 /* peripheral.m in Sources */,
 				F2F734182CA5F60800117E3C /* bootloader.m in Sources */,
+				F21A00722CB07A3D00357224 /* Console.m in Sources */,
 				F2F734152CA5DF1800117E3C /* ram.c in Sources */,
 				F2F734092CA5C1B700117E3C /* cpu.m in Sources */,
 				F2F7341C2CA5F95A00117E3C /* proc.c in Sources */,

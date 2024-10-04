@@ -93,7 +93,7 @@ void *execute(void *arg) {
         switch(instruction) {
             case 0x00:
                 printf("[cpu] exited on line %d\n", i);
-                exit(0);
+                return 0;
             case 0x01:
                 *ptr1 = *ptr2;
                 break;

@@ -11,8 +11,9 @@
 @interface Controller : NSObject <NSWindowDelegate>
 
 @property (nonatomic, weak) NSWindow *window;
+@property (nonatomic, weak) NSWindow *logwindow;
 
-- (void) menuInit:(NSWindow*)window;
+- (void) menuInit:(NSWindow*)window logwindow:(NSWindow*)logwindow;
 - (void) openimg:(id)sender;
 
 @end
