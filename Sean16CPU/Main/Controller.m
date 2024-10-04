@@ -27,7 +27,7 @@
     menu = [[NSMenu alloc] initWithTitle:@"CPU"];
     
     // Here, ensure that the selector matches the method signature `openimg:`
-    [menu addItemWithTitle:@"Open" action:@selector(openimg:) keyEquivalent:@""];
+    [menu addItemWithTitle:@"Run Executable" action:@selector(openimg:) keyEquivalent:@""];
     
     menuItem = [[NSMenuItem alloc] initWithTitle:@"CPU" action:nil keyEquivalent:@""];
     [menuItem setSubmenu:menu];
@@ -35,20 +35,14 @@
 }
 
 - (void) openimg:(id)sender {
-    // Display an open panel for selecting an image
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     
-    // Allow only one selection
     [panel setAllowsMultipleSelection:NO];
-    
-    // Set allowed file types (image files)
     [panel setAllowedFileTypes:@[@"bin"]];
-    
-    // Display the panel
+
     [panel beginWithCompletionHandler:^(NSModalResponse result) {
         if (result == NSModalResponseOK) {
             NSURL *fileURL = [[panel URLs] firstObject];
-            // Handle the selected file here (e.g., log the file path)
             NSLog(@"running: %@", fileURL.path);
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 kickstart(fileURL.path);

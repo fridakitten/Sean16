@@ -8,7 +8,7 @@
 #include "../Sean16.h"
 #include "peripheral.h"
 #include "rdrand.h"
-#include <Kernel/kernel.h>
+#include <Bootloader/bootloader.h>
 #include <GPU/gpu.h>
 #import <CoreGraphics/CoreGraphics.h>
 

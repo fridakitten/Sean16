@@ -6,14 +6,14 @@
 //
 
 #include "../../Sean16.h"
-#include "kernel.h"
+#include "bootloader.h"
 #import <Cocoa/Cocoa.h>
 #import <Peripherals/Mouse.h>
 #import <GPU/gpu.h>
 
 extern void *execute(void *arg);
 
-void kernel_init(uint8_t binmap[1000][6]) {
+void bootloader(uint8_t binmap[1000][6]) {
     printf("[soc-bootloader] clearing screen\n");
     clearScreen();
     

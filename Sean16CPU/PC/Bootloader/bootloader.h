@@ -11,4 +11,6 @@
 #include <stdio.h>
 #include "proc.h"
 
+void bootloader(uint8_t binmap[1000][6]);
+
 #endif /* kernel_h */
