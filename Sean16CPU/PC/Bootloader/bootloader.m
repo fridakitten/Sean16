@@ -8,7 +8,7 @@
 #include "../../Sean16.h"
 #include "bootloader.h"
 #import <Cocoa/Cocoa.h>
-#import <Peripherals/Mouse.h>
+#import <Peripherals/Mouse/Mouse.h>
 #import <GPU/gpu.h>
 
 extern void *execute(void *arg);

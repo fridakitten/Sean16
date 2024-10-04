@@ -6,7 +6,7 @@
 
 #include <stdint.h>
 #include "Sean16.h"
-#import <Display/Display.h>
-#import <Peripherals/Mouse.h>
+#import <Peripherals/Display/Display.h>
+#import <Peripherals/Mouse/Mouse.h>
 
 void kickstart(NSString *path);

@@ -72,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F21A00702CB050D100357224 /* Mouse */ = {
+			isa = PBXGroup;
+			children = (
+				F26382B12CA7502E00EDDF84 /* Mouse.m */,
+				F26382B32CA7504A00EDDF84 /* Mouse.h */,
+			);
+			path = Mouse;
+			sourceTree = "<group>";
+		};
 		F237BE422CAC63B700D353A6 /* Display */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,8 +93,8 @@
 		F237BE462CAC63E300D353A6 /* Peripherals */ = {
 			isa = PBXGroup;
 			children = (
-				F26382B12CA7502E00EDDF84 /* Mouse.m */,
-				F26382B32CA7504A00EDDF84 /* Mouse.h */,
+				F21A00702CB050D100357224 /* Mouse */,
+				F237BE422CAC63B700D353A6 /* Display */,
 			);
 			path = Peripherals;
 			sourceTree = "<group>";
@@ -178,12 +187,11 @@
 		F2F7340A2CA5C1F400117E3C /* PC */ = {
 			isa = PBXGroup;
 			children = (
-				F2F734192CA5F93900117E3C /* Bootloader */,
-				F237BE422CAC63B700D353A6 /* Display */,
-				F237BE462CAC63E300D353A6 /* Peripherals */,
 				F237BE472CAC642800D353A6 /* CPU */,
-				F237BE482CAC643C00D353A6 /* RAM */,
 				F237BE492CAC648600D353A6 /* GPU */,
+				F237BE482CAC643C00D353A6 /* RAM */,
+				F237BE462CAC63E300D353A6 /* Peripherals */,
+				F2F734192CA5F93900117E3C /* Bootloader */,
 			);
 			path = PC;
 			sourceTree = "<group>";

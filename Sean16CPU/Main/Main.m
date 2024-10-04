@@ -1,6 +1,6 @@
 #import <Cocoa/Cocoa.h>
-#import <Display/Display.h>
-#import <Peripherals/Mouse.h>
+#import <Peripherals/Display/Display.h>
+#import <Peripherals/Mouse/Mouse.h>
 #import <Foundation/Foundation.h>
 #import "Sean16.main.h"
 #import "FPS.h"
