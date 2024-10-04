@@ -5,6 +5,7 @@
 @property (nonatomic, strong) id trackingHandler;
 @property (nonatomic, strong) id shortcutEventHandler;
 @property (nonatomic, assign) BOOL isTrackingPaused;
+@property (nonatomic, assign) BOOL isTrackingInitialised;
 @property (nonatomic, assign) BOOL cursorHidden;
 
 @end
@@ -141,11 +142,19 @@
 #pragma mark - Window Notification Handlers
 
 - (void)windowDidBecomeKey:(NSNotification *)notification {
-    [self startTracking];
+    if(_isTrackingInitialised) {
+        [self startTracking];
+    }
 }
 
 - (void)windowDidResignKey:(NSNotification *)notification {
-    [self stopTracking];
+    if(_isTrackingInitialised) {
+        [self stopTracking];
+    }
+}
+
+- (void)setInit:(BOOL)value {
+    _isTrackingInitialised = value;
 }
 
 @end

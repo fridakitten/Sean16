@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSPoint *)getCursorPosition;
 - (void)startTracking;
 - (void)stopTracking;
+- (void)setInit:(BOOL)value;
 - (void)unhideCursor;
 - (void)hideCursor;
 

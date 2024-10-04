@@ -20,6 +20,8 @@ void bootloader(uint8_t binmap[1000][6]) {
     // INIT
     printf("[soc-bootloader] initialising mouse\n");
     CursorTracker *mouse = getTracker(NULL);
+    [mouse setInit:YES];
+    [mouse stopTracking];
     [mouse startTracking];
     
     // fork process
@@ -40,6 +42,7 @@ void bootloader(uint8_t binmap[1000][6]) {
     printf("[soc-bootloader] process has finished execution\n");
     printf("[soc-bootloader] deinitialising mouse\n");
     [mouse stopTracking];
+    [mouse setInit:NO];
     
     // killing task
     printf("[soc-bootloader] freeing process\n");
