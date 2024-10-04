@@ -11,7 +11,6 @@
 #include "../Sean16.h"
 
 typedef struct {
-    size_t size;
     uint8_t *memory[1024][6];
 } page_t;
 
