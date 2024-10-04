@@ -22,8 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSPoint *)getCursorPosition;
 - (void)startTracking;
 - (void)stopTracking;
-- (void)activateRestrictedMode;
-- (void)resumeTracking;
 - (void)unhideCursor;
 - (void)hideCursor;
 
@@ -33,3 +31,5 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+CursorTracker *getTracker(void *arg);

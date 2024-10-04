@@ -115,3 +115,13 @@
 }
 
 @end
+
+CursorTracker *mouse;
+
+CursorTracker *getTracker(void *arg) {
+    if(mouse == NULL) {
+        mouse = [[CursorTracker alloc] initWithWindow:(__bridge NSWindow*)arg];
+    }
+    
+    return mouse;
+}

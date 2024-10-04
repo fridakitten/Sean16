@@ -9,4 +9,4 @@
 #import <Display/Display.h>
 #import <Peripherals/Mouse.h>
 
-void kickstart(NSString *path, NSWindow *window);
+void kickstart(NSString *path);

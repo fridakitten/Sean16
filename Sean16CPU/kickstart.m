@@ -11,9 +11,9 @@
 #include "Sean16.h"
 #include "libasmfile/libasmfile.h"
 
-extern void kernel_init(uint8_t binmap[1000][6], NSWindow *window);
+extern void kernel_init(uint8_t binmap[1000][6]);
 
-void kickstart(NSString *path, NSWindow *window) {
+void kickstart(NSString *path) {
     uint8_t **asmData = readasm([path UTF8String]);
     
     if (asmData == NULL) {
@@ -33,5 +33,5 @@ void kickstart(NSString *path, NSWindow *window) {
         }
     }
     
-    kernel_init(binmap, window);
+    kernel_init(binmap);
 }

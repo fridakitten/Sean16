@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F21A006D2CB03E8500357224 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = F21A006C2CB03E8500357224 /* Controller.m */; };
 		F237BE452CAC63B700D353A6 /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = F237BE432CAC63B700D353A6 /* Display.m */; };
 		F237BE4B2CAC6B5F00D353A6 /* peripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = F237BE4A2CAC6B5F00D353A6 /* peripheral.m */; };
 		F237BE5A2CAD7FA400D353A6 /* libasmfile.c in Sources */ = {isa = PBXBuildFile; fileRef = F237BE592CAD7FA400D353A6 /* libasmfile.c */; };
-		F237BE5D2CAD81BD00D353A6 /* output.bin in Resources */ = {isa = PBXBuildFile; fileRef = F237BE5C2CAD81BD00D353A6 /* output.bin */; };
 		F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382AE2CA7119C00EDDF84 /* gpu.m */; };
 		F26382B22CA7502E00EDDF84 /* Mouse.m in Sources */ = {isa = PBXBuildFile; fileRef = F26382B12CA7502E00EDDF84 /* Mouse.m */; };
 		F271594E2CAED59F00B083D7 /* rdrand.c in Sources */ = {isa = PBXBuildFile; fileRef = F271594D2CAED59F00B083D7 /* rdrand.c */; };
@@ -26,13 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F21A006C2CB03E8500357224 /* Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
+		F21A006E2CB03F4F00357224 /* Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		F237BE432CAC63B700D353A6 /* Display.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Display.m; sourceTree = "<group>"; };
 		F237BE442CAC63B700D353A6 /* Display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
 		F237BE4A2CAC6B5F00D353A6 /* peripheral.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = peripheral.m; sourceTree = "<group>"; };
 		F237BE4C2CAC6B8000D353A6 /* peripheral.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = peripheral.h; sourceTree = "<group>"; };
 		F237BE592CAD7FA400D353A6 /* libasmfile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libasmfile.c; sourceTree = "<group>"; };
 		F237BE5B2CAD7FD600D353A6 /* libasmfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libasmfile.h; sourceTree = "<group>"; };
-		F237BE5C2CAD81BD00D353A6 /* output.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = output.bin; sourceTree = "<group>"; };
 		F26382AE2CA7119C00EDDF84 /* gpu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gpu.m; sourceTree = "<group>"; };
 		F26382B02CA712D400EDDF84 /* gpu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gpu.h; sourceTree = "<group>"; };
 		F26382B12CA7502E00EDDF84 /* Mouse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mouse.m; sourceTree = "<group>"; };
@@ -131,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				F2758B092CAE249700ED6D37 /* Main.m */,
+				F21A006C2CB03E8500357224 /* Controller.m */,
+				F21A006E2CB03F4F00357224 /* Controller.h */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -146,7 +149,6 @@
 		F2F733D82CA5C17300117E3C /* Sean16CPU */ = {
 			isa = PBXGroup;
 			children = (
-				F237BE5C2CAD81BD00D353A6 /* output.bin */,
 				F2F734052CA5C1B700117E3C /* Sean16.main.h */,
 				F2F734072CA5C1B700117E3C /* Sean16.h */,
 				F27159502CAEDB0B00B083D7 /* FPS.m */,
@@ -254,7 +256,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2F733E12CA5C17500117E3C /* Preview Assets.xcassets in Resources */,
-				F237BE5D2CAD81BD00D353A6 /* output.bin in Resources */,
 				F2F733DE2CA5C17500117E3C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +272,7 @@
 				F237BE5A2CAD7FA400D353A6 /* libasmfile.c in Sources */,
 				F271594E2CAED59F00B083D7 /* rdrand.c in Sources */,
 				F26382AF2CA7119C00EDDF84 /* gpu.m in Sources */,
+				F21A006D2CB03E8500357224 /* Controller.m in Sources */,
 				F237BE452CAC63B700D353A6 /* Display.m in Sources */,
 				F2758B0A2CAE249700ED6D37 /* Main.m in Sources */,
 				F237BE4B2CAC6B5F00D353A6 /* peripheral.m in Sources */,

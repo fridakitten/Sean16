@@ -13,13 +13,13 @@
 
 extern void *execute(void *arg);
 
-void kernel_init(uint8_t binmap[1000][6], NSWindow *window) {
+void kernel_init(uint8_t binmap[1000][6]) {
     printf("[soc-bootloader] clearing screen\n");
     clearScreen();
     
     // INIT
     printf("[soc-bootloader] initialising mouse\n");
-    CursorTracker *mouse = [[CursorTracker alloc] initWithWindow:window];
+    CursorTracker *mouse = getTracker(NULL);
     [mouse startTracking];
     
     // fork process
