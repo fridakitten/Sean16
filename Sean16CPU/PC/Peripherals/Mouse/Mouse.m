@@ -18,8 +18,24 @@
         _isTrackingPaused = NO;
         _lastMouseButtonState = 0;
         _window = window;
+
+        // Add observers for window focus events
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(windowDidBecomeKey:)
+                                                     name:NSWindowDidBecomeKeyNotification
+                                                   object:window];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(windowDidResignKey:)
+                                                     name:NSWindowDidResignKeyNotification
+                                                   object:window];
     }
     return self;
+}
+
+- (void)dealloc {
+    // Remove observers
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (NSPoint*)getCursorPosition {
@@ -31,6 +47,12 @@
 }
 
 - (void)startTracking {
+    if (!self.isTrackingPaused) {
+        return; // Already tracking
+    }
+
+    self.isTrackingPaused = NO;
+
     // Monitor for mouse movement (within the app window)
     self.trackingHandler = [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskMouseMoved handler:^(NSEvent *event) {
         if (!self.isTrackingPaused) {
@@ -62,6 +84,9 @@
         [NSEvent removeMonitor:self.shortcutEventHandler];
         self.shortcutEventHandler = nil;
     }
+    
+    self.isTrackingPaused = YES;
+    [self unhideCursor];
 }
 
 - (void)hideCursor {
@@ -107,11 +132,20 @@
         //NSLog(@"Cursor position (scaled): (%.2f, %.2f)", clampedX, clampedY);
         [self hideCursor];
     } else {
-        
         // Cursor is outside the window, stop tracking
         //NSLog(@"Cursor outside the window.");
         [self unhideCursor];
     }
+}
+
+#pragma mark - Window Notification Handlers
+
+- (void)windowDidBecomeKey:(NSNotification *)notification {
+    [self startTracking];
+}
+
+- (void)windowDidResignKey:(NSNotification *)notification {
+    [self stopTracking];
 }
 
 @end
