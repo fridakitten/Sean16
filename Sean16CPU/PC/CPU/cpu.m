@@ -57,36 +57,36 @@ void *execute(void *arg) {
     printf("[cpu] executing\n");
     
     for(int i = 0; i < 1000; i++) {
-        instruction = *(proccess->page->memory[i][0]);
+        instruction = *(proccess->page[0]->memory[i][0]);
         
-        if (*(proccess->page->memory[i][1]) < 65) {
-            ptr1 = &reg[*(proccess->page->memory[i][1])];
+        if (*(proccess->page[0]->memory[i][1]) < 65) {
+            ptr1 = &reg[*(proccess->page[0]->memory[i][1])];
         } else {
-            dummyreg[0] = *(proccess->page->memory[i][1]) - 65;
+            dummyreg[0] = *(proccess->page[0]->memory[i][1]) - 65;
             ptr1 = &dummyreg[0];
         }
-        if (*(proccess->page->memory[i][2]) < 65) {
-            ptr2 = &reg[*(proccess->page->memory[i][2])];
+        if (*(proccess->page[0]->memory[i][2]) < 65) {
+            ptr2 = &reg[*(proccess->page[0]->memory[i][2])];
         } else {
-            dummyreg[1] = *(proccess->page->memory[i][2]) - 65;
+            dummyreg[1] = *(proccess->page[0]->memory[i][2]) - 65;
             ptr2 = &dummyreg[1];
         }
-        if (*(proccess->page->memory[i][3]) < 65) {
-            ptr3 = &reg[*(proccess->page->memory[i][3])];
+        if (*(proccess->page[0]->memory[i][3]) < 65) {
+            ptr3 = &reg[*(proccess->page[0]->memory[i][3])];
         } else {
-            dummyreg[2] = *(proccess->page->memory[i][3]) - 65;
+            dummyreg[2] = *(proccess->page[0]->memory[i][3]) - 65;
             ptr3 = &dummyreg[2];
         }
-        if (*(proccess->page->memory[i][4]) < 65) {
-            ptr4 = &reg[*(proccess->page->memory[i][4])];
+        if (*(proccess->page[0]->memory[i][4]) < 65) {
+            ptr4 = &reg[*(proccess->page[0]->memory[i][4])];
         } else {
-            dummyreg[3] = *(proccess->page->memory[i][4]) - 65;
+            dummyreg[3] = *(proccess->page[0]->memory[i][4]) - 65;
             ptr4 = &dummyreg[3];
         }
-        if (*(proccess->page->memory[i][5]) < 65) {
-            ptr5 = &reg[*(proccess->page->memory[i][5])];
+        if (*(proccess->page[0]->memory[i][5]) < 65) {
+            ptr5 = &reg[*(proccess->page[0]->memory[i][5])];
         } else {
-            dummyreg[4] = *(proccess->page->memory[i][5]) - 65;
+            dummyreg[4] = *(proccess->page[0]->memory[i][5]) - 65;
             ptr5 = &dummyreg[4];
         }
         
@@ -119,7 +119,7 @@ void *execute(void *arg) {
                 evaluate(&i, *ptr1, *ptr2, *ptr3, *ptr4);
                 break;
             case 0x09:
-                periphalMUS(proccess->peri, ptr1, ptr2, ptr3);
+                periphalMUS(proccess->page[2], ptr1, ptr2, ptr3);
                 break;
             case 0x0A:
                 rdrand(ptr1, *ptr2, *ptr3);

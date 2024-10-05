@@ -27,12 +27,12 @@ void bootloader(uint8_t binmap[1000][6]) {
     // fork process
     printf("[soc-bootloader] forking kernel process\n");
     proc *child_task = proc_fork(binmap);
-    child_task->peri = genpage();
+    child_task->page[2] = genpage();
     
     // peripherials mapping
     printf("[soc-bootloader] mapping peripherals\n");
-    *((CGPoint **)&child_task->peri->memory[0][0]) = [mouse getCursorPosition];
-    *((NSInteger **)&child_task->peri->memory[0][1]) = [mouse getLastMouseButtonState];
+    *((CGPoint **)&child_task->page[2]->memory[0][0]) = [mouse getCursorPosition];
+    *((NSInteger **)&child_task->page[2]->memory[0][1]) = [mouse getLastMouseButtonState];
     
     // executing process
     printf("[soc-bootloader] executing kernel process\n");

@@ -18,9 +18,7 @@ typedef struct {
     uint8_t pid;            // process identifier
     uint8_t state;          // 0 = not running / 1 = running / 2 = paused / 3 = killed
     pthread_t thread;       // processes thread;
-    page_t *page;           // page for binary
-    page_t *var;            // page for variables
-    page_t *peri;           // peripherals mapping
+    page_t *page[126];        // process pages
 } proc;
 
 proc* proc_fork(uint8_t binmap[1000][6]);

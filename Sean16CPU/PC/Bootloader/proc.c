@@ -16,11 +16,11 @@ proc* proc_fork(uint8_t binmap[1000][6]) {
 
     pid->pid = pidn;
     pid->state = 1;
-    pid->page = genpage();
-    pid->var = genpage();
+    pid->page[0] = genpage();
+    pid->page[1] = genpage();
     for(int i = 0; 6 > i; i++) {
         for(int j = 0; 1024 > j; j++) {
-            *pid->page->memory[i][j] = binmap[i][j];
+            *pid->page[0]->memory[i][j] = binmap[i][j];
         }
     }
     
