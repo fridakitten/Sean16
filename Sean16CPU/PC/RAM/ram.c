@@ -9,8 +9,8 @@
 #include "ram.h"
 
 uint8_t RAMDISK[S_RAMSIZE_MAX];
-uint16_t current_addr = 0;
-uint8_t current_page = 0;
+uint32_t current_addr = 0;
+uint16_t current_page = 0;
 
 page_t* genpage(void) {
     page_t *page = malloc(sizeof(page_t));
@@ -27,7 +27,7 @@ page_t* genpage(void) {
         }
     }
     
-    printf("[ram] %'d bytes left (%.2f MB)\n", S_RAMSIZE_MAX - current_addr, (S_RAMSIZE_MAX - current_addr) / (1024.0 * 1024.0));
+    printf("[ram] %'d bytes left (%.2f MB) <- addr %d\n", S_RAMSIZE_MAX - current_addr, (S_RAMSIZE_MAX - current_addr) / (1024.0 * 1024.0), current_addr);
     
     current_page += 1;
 
