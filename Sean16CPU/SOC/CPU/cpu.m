@@ -72,68 +72,25 @@ void *execute(void *arg) {
         ptr5 = getPointer(*(proccess->page[0]->memory[i][5]), 5);
         
         switch(instruction) {
-            case EXT:
-                printf("[cpu] exited on line %d\n", i);
-                return 0;
-            case STO:
-                *ptr1 = *ptr2;
-                break;
-            case ADD:
-                *ptr1 += *ptr2;
-                break;
-            case SUB:
-                *ptr1 -= *ptr2;
-                break;
-            case MUL:
-                *ptr1 *= *ptr2;
-                break;
-            case DIV:
-                *ptr1 /= *ptr2;
-                break;
-            case DSP:
-                printf("[cpu] %d\n", *ptr1);
-                break;
-            case JMP:
-                i = *ptr1 -1;
-                break;
-            case IFQ:
-                evaluate(&i, *ptr1, *ptr2, *ptr3, *ptr4);
-                break;
-            case RAN:
-                periphalMUS(proccess->page[2], ptr1, ptr2, ptr3);
-                break;
-            case MUS:
-                rdrand(ptr1, *ptr2, *ptr3);
-                break;
-            case GPX:
-                usleep(50);
-                setpixel(*ptr1, *ptr2, *ptr3);
-                break;
-            case GDL:
-                usleep(50);
-                drawLine(*ptr1, *ptr2, *ptr3, *ptr4, *ptr5);
-                break;
-            case GDC:
-                usleep(50);
-                drawCharacter(*ptr1, *ptr2, *ptr3, *ptr4);
-                break;
-            case GCS:
-                usleep(50);
-                clearScreen();
-                break;
-            case GGC:
-                usleep(50);
-                *ptr1 = getColorOfPixel(*ptr2, *ptr3);
-                break;
-            case SSP:
-                sleep(*ptr1);
-                break;
-            case NSP:
-                usleep(*ptr1 * *ptr2 * *ptr3);
-                break;
-            default:
-                printf("[cpu] 0x%02x is illegal\n", i);
-                return NULL;
+            case EXT: printf("[cpu] exited on line %d\n", i); return 0;
+            case STO: *ptr1 = *ptr2; break;
+            case ADD: *ptr1 += *ptr2; break;
+            case SUB: *ptr1 -= *ptr2; break;
+            case MUL: *ptr1 *= *ptr2; break;
+            case DIV: *ptr1 /= *ptr2; break;
+            case DSP: printf("[cpu] %d\n", *ptr1); break;
+            case JMP: i = *ptr1 -1; break;
+            case IFQ: evaluate(&i, *ptr1, *ptr2, *ptr3, *ptr4); break;
+            case MUS: periphalMUS(proccess->page[2], ptr1, ptr2, ptr3); break;
+            case RAN: rdrand(ptr1, *ptr2, *ptr3); break;
+            case GPX: usleep(50); setpixel(*ptr1, *ptr2, *ptr3); break;
+            case GDL: usleep(50); drawLine(*ptr1, *ptr2, *ptr3, *ptr4, *ptr5); break;
+            case GDC: usleep(50); drawCharacter(*ptr1, *ptr2, *ptr3, *ptr4); break;
+            case GCS: usleep(50); clearScreen(); break;
+            case GGC: usleep(50); *ptr1 = getColorOfPixel(*ptr2, *ptr3); break;
+            case SSP: sleep(*ptr1); break;
+            case NSP: usleep(*ptr1 * *ptr2 * *ptr3); break;
+            default: printf("[cpu] 0x%02x is illegal\n", i); return NULL;
         }
     }
     
