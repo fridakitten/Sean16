@@ -132,7 +132,7 @@ void vfs_write_file(VFSDirectory *parentDir, NSString *fileName, NSData *content
     NSLog(@"File '%@' not found.", fileName);
 }
 
-/*int main(int argc, const char * argv[]) {
+/*int poc(void) {
     @autoreleasepool {
         // Locate the Resources directory path (for development purposes)
         NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
