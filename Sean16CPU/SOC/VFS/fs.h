@@ -89,4 +89,10 @@ NSData *vfs_read_file(VFSDirectory *parentDir, NSString *fileName);
 /// @param content The data to write to the file
 void vfs_write_file(VFSDirectory *parentDir, NSString *fileName, NSData *content);
 
+// management functions
 void fs_init(void);
+void fs_format(void);
+void fs_mkdir(char *path);
+void fs_rmdir(char *path);
+void fs_cfile(char *path, char *content);
+void fs_dfile(char *path);
