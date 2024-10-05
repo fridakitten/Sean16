@@ -24,8 +24,8 @@
     [menuItem setSubmenu:menu];
     [[NSApp mainMenu] addItem:menuItem];
     
-    menu = [[NSMenu alloc] initWithTitle:@"CPU"];
-    [menu addItemWithTitle:@"Run Executable" action:@selector(openimg:) keyEquivalent:@""];
+    menu = [[NSMenu alloc] initWithTitle:@"File"];
+    [menu addItemWithTitle:@"Open" action:@selector(openimg:) keyEquivalent:@""];
     
     menuItem = [[NSMenuItem alloc] initWithTitle:@"CPU" action:nil keyEquivalent:@""];
     [menuItem setSubmenu:menu];

@@ -170,7 +170,7 @@
 				F27159502CAEDB0B00B083D7 /* FPS.m */,
 				F27159522CAEDB1B00B083D7 /* FPS.h */,
 				F2758B082CAE248500ED6D37 /* Main */,
-				F2F7340A2CA5C1F400117E3C /* PC */,
+				F2F7340A2CA5C1F400117E3C /* SOC */,
 				F237BE582CAD7FA400D353A6 /* libasmfile */,
 				F2F734112CA5DCB300117E3C /* kickstart.m */,
 				F2F733DD2CA5C17500117E3C /* Assets.xcassets */,
@@ -189,7 +189,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		F2F7340A2CA5C1F400117E3C /* PC */ = {
+		F2F7340A2CA5C1F400117E3C /* SOC */ = {
 			isa = PBXGroup;
 			children = (
 				F237BE472CAC642800D353A6 /* CPU */,
@@ -198,7 +198,7 @@
 				F237BE462CAC63E300D353A6 /* Peripherals */,
 				F2F734192CA5F93900117E3C /* Bootloader */,
 			);
-			path = PC;
+			path = SOC;
 			sourceTree = "<group>";
 		};
 		F2F734192CA5F93900117E3C /* Bootloader */ = {
@@ -429,7 +429,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Sean16CPU/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/Sean16CPU/PC";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Sean16CPU/SOC";
 				INFOPLIST_FILE = Sean16CPU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,7 +455,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Sean16CPU/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/Sean16CPU/PC";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Sean16CPU/SOC";
 				INFOPLIST_FILE = Sean16CPU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
