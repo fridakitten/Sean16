@@ -8,6 +8,7 @@
 #include "../Sean16.h"
 #include "peripheral.h"
 #include "rdrand.h"
+#include "cpu.h"
 #include <Bootloader/bootloader.h>
 #include <GPU/gpu.h>
 #import <CoreGraphics/CoreGraphics.h>
@@ -71,63 +72,63 @@ void *execute(void *arg) {
         ptr5 = getPointer(*(proccess->page[0]->memory[i][5]), 5);
         
         switch(instruction) {
-            case 0x00:
+            case EXT:
                 printf("[cpu] exited on line %d\n", i);
                 return 0;
-            case 0x01:
+            case STO:
                 *ptr1 = *ptr2;
                 break;
-            case 0x02:
+            case ADD:
                 *ptr1 += *ptr2;
                 break;
-            case 0x03:
+            case SUB:
                 *ptr1 -= *ptr2;
                 break;
-            case 0x04:
+            case MUL:
                 *ptr1 *= *ptr2;
                 break;
-            case 0x05:
+            case DIV:
                 *ptr1 /= *ptr2;
                 break;
-            case 0x06:
+            case DSP:
                 printf("[cpu] %d\n", *ptr1);
                 break;
-            case 0x07:
+            case JMP:
                 i = *ptr1 -1;
                 break;
-            case 0x08:
+            case IFQ:
                 evaluate(&i, *ptr1, *ptr2, *ptr3, *ptr4);
                 break;
-            case 0x09:
+            case RAN:
                 periphalMUS(proccess->page[2], ptr1, ptr2, ptr3);
                 break;
-            case 0x0A:
+            case MUS:
                 rdrand(ptr1, *ptr2, *ptr3);
                 break;
-            case 0xA0:
+            case GPX:
                 usleep(50);
                 setpixel(*ptr1, *ptr2, *ptr3);
                 break;
-            case 0xA1:
+            case GDL:
                 usleep(50);
                 drawLine(*ptr1, *ptr2, *ptr3, *ptr4, *ptr5);
                 break;
-            case 0xA2:
+            case GDC:
                 usleep(50);
                 drawCharacter(*ptr1, *ptr2, *ptr3, *ptr4);
                 break;
-            case 0xA3:
+            case GCS:
                 usleep(50);
                 clearScreen();
                 break;
-            case 0xA4:
+            case GGC:
                 usleep(50);
                 *ptr1 = getColorOfPixel(*ptr2, *ptr3);
                 break;
-            case 0xB0:
+            case SSP:
                 sleep(*ptr1);
                 break;
-            case 0xB1:
+            case NSP:
                 usleep(*ptr1 * *ptr2 * *ptr3);
                 break;
             default:
