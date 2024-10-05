@@ -45,11 +45,11 @@ void *execute(void *arg) {
         reg[i] = 0;
     }
     
-    uint16_t *ptr1 = malloc(sizeof(uint16_t));
-    uint16_t *ptr2 = malloc(sizeof(uint16_t));
-    uint16_t *ptr3 = malloc(sizeof(uint16_t));
-    uint16_t *ptr4 = malloc(sizeof(uint16_t));
-    uint16_t *ptr5 = malloc(sizeof(uint16_t));
+    uint16_t *ptr1;
+    uint16_t *ptr2;
+    uint16_t *ptr3;
+    uint16_t *ptr4;
+    uint16_t *ptr5;
     uint16_t dummyreg[5];
     uint8_t instruction;
     
@@ -155,5 +155,6 @@ void *execute(void *arg) {
                 return NULL;
         }
     }
+    
     return NULL;
 }
