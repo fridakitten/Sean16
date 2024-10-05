@@ -57,7 +57,7 @@
 		F2F733E22CA5C17500117E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2F733E32CA5C17500117E3C /* Sean16CPU.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sean16CPU.entitlements; sourceTree = "<group>"; };
 		F2F734052CA5C1B700117E3C /* Sean16.main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sean16.main.h; sourceTree = "<group>"; };
-		F2F734062CA5C1B700117E3C /* Sean16CPU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sean16CPU.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2F734062CA5C1B700117E3C /* Sean16CPU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Sean16CPU.app; path = /Users/fridaboleslawska/Documents/GitHub/Sean16/build/Debug/Sean16CPU.app; sourceTree = "<absolute>"; };
 		F2F734072CA5C1B700117E3C /* Sean16.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sean16.h; sourceTree = "<group>"; };
 		F2F734082CA5C1B700117E3C /* cpu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cpu.m; sourceTree = "<group>"; };
 		F2F734112CA5DCB300117E3C /* kickstart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kickstart.m; sourceTree = "<group>"; };
@@ -173,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				F2F733D82CA5C17300117E3C /* Sean16CPU */,
-				F2F734062CA5C1B700117E3C /* Sean16CPU.app */,
 			);
 			sourceTree = "<group>";
 		};
