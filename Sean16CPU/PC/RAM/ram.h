@@ -11,9 +11,11 @@
 #include "../Sean16.h"
 
 typedef struct {
+    uint16_t id;
     uint8_t *memory[1024][6];
 } page_t;
 
 page_t* genpage(void);
+void freepage(page_t *page);
 
 #endif /* ram_h */

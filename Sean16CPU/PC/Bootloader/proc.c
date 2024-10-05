@@ -6,6 +6,7 @@
 //
 
 #include "proc.h"
+#include <RAM/ram.h>
 
 static proc *processes[UINT16_MAX];
 
@@ -32,6 +33,10 @@ proc* proc_fork(uint8_t binmap[1000][6]) {
 
 void proc_kill(proc *process) {
     uint16_t pidt = process->pid;
+    
+    freepage(processes[pidt]->page[0]);
+    freepage(processes[pidt]->page[1]);
+    freepage(processes[pidt]->page[2]);
     
     free(processes[pidt]);
 }
