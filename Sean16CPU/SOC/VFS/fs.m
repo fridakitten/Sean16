@@ -36,7 +36,7 @@
         
         _fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:path];
         if (!_fileHandle) {
-            NSLog(@"Failed to open virtual file system.");
+            //NSLog(@"Failed to open virtual file system.");
             return nil;
         }
     }
@@ -56,7 +56,7 @@
     [self.fileHandle seekToFileOffset:0];
     [self.fileHandle writeData:metadataData];
     
-    NSLog(@"Formatted the file system with %u blocks.", metadata.blockCount);
+    //NSLog(@"Formatted the file system with %u blocks.", metadata.blockCount);
 }
 
 @end
@@ -65,18 +65,18 @@
 void vfs_mkdir(VFSDirectory *parentDir, NSString *dirName) {
     VFSDirectory *newDir = [[VFSDirectory alloc] initWithName:dirName];
     [parentDir.directories addObject:newDir];
-    NSLog(@"Directory '%@' created.", dirName);
+    //NSLog(@"Directory '%@' created.", dirName);
 }
 
 void vfs_rmdir(VFSDirectory *parentDir, NSString *dirName) {
     for (VFSDirectory *dir in parentDir.directories) {
         if ([dir.name isEqualToString:dirName]) {
             [parentDir.directories removeObject:dir];
-            NSLog(@"Directory '%@' removed.", dirName);
+            //NSLog(@"Directory '%@' removed.", dirName);
             return;
         }
     }
-    NSLog(@"Directory '%@' not found.", dirName);
+    //NSLog(@"Directory '%@' not found.", dirName);
 }
 
 void vfs_create_file(VFSDirectory *parentDir, NSString *fileName, NSData *content) {
@@ -85,38 +85,38 @@ void vfs_create_file(VFSDirectory *parentDir, NSString *fileName, NSData *conten
     newFile.size = content.length;
     newFile.content = content;
     [parentDir.files addObject:newFile];
-    NSLog(@"File '%@' created.", fileName);
+    //NSLog(@"File '%@' created.", fileName);
 }
 
 void vfs_delete_file(VFSDirectory *parentDir, NSString *fileName) {
     for (VFSFile *file in parentDir.files) {
         if ([file.name isEqualToString:fileName]) {
             [parentDir.files removeObject:file];
-            NSLog(@"File '%@' deleted.", fileName);
+            //NSLog(@"File '%@' deleted.", fileName);
             return;
         }
     }
-    NSLog(@"File '%@' not found.", fileName);
+    //NSLog(@"File '%@' not found.", fileName);
 }
 
 void vfs_list_dir(VFSDirectory *dir) {
-    NSLog(@"Listing directory: %@", dir.name);
+    //NSLog(@"Listing directory: %@", dir.name);
     for (VFSDirectory *subdir in dir.directories) {
-        NSLog(@"[DIR] %@", subdir.name);
+        //NSLog(@"[DIR] %@", subdir.name);
     }
     for (VFSFile *file in dir.files) {
-        NSLog(@"[FILE] %@ (%lu bytes)", file.name, (unsigned long)file.size);
+        //NSLog(@"[FILE] %@ (%lu bytes)", file.name, (unsigned long)file.size);
     }
 }
 
 NSData *vfs_read_file(VFSDirectory *parentDir, NSString *fileName) {
     for (VFSFile *file in parentDir.files) {
         if ([file.name isEqualToString:fileName]) {
-            NSLog(@"Reading file '%@'", fileName);
+            //NSLog(@"Reading file '%@'", fileName);
             return file.content;
         }
     }
-    NSLog(@"File '%@' not found.", fileName);
+    //NSLog(@"File '%@' not found.", fileName);
     return nil;
 }
 
@@ -125,50 +125,9 @@ void vfs_write_file(VFSDirectory *parentDir, NSString *fileName, NSData *content
         if ([file.name isEqualToString:fileName]) {
             file.content = content;
             file.size = content.length;
-            NSLog(@"Wrote data to file '%@'", fileName);
+            //NSLog(@"Wrote data to file '%@'", fileName);
             return;
         }
     }
-    NSLog(@"File '%@' not found.", fileName);
+    //NSLog(@"File '%@' not found.", fileName);
 }
-
-/*int poc(void) {
-    @autoreleasepool {
-        // Locate the Resources directory path (for development purposes)
-        NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
-        NSString *filePath = [resourcePath stringByAppendingPathComponent:@"virtualFS.dat"];
-        
-        // Specify size of the virtual file system (e.g., 10 MB)
-        NSUInteger fsSize = 10 * 1024 * 1024; // 10 MB
-        
-        // Create and format the virtual file system
-        VirtualFileSystem *vfs = [[VirtualFileSystem alloc] initWithFilePath:filePath size:fsSize];
-        [vfs formatFileSystem];
-        
-        // File system operations
-        vfs_mkdir(vfs.rootDirectory, @"Documents");
-        vfs_mkdir(vfs.rootDirectory, @"Downloads");
-        vfs_create_file(vfs.rootDirectory, @"file1.txt", [@"Hello World" dataUsingEncoding:NSUTF8StringEncoding]);
-        
-        // List directory contents
-        vfs_list_dir(vfs.rootDirectory);
-        
-        // Read and write file
-        NSData *readContent = vfs_read_file(vfs.rootDirectory, @"file1.txt");
-        NSLog(@"Read content: %@", [[NSString alloc] initWithData:readContent encoding:NSUTF8StringEncoding]);
-        
-        // Write new content to file
-        vfs_write_file(vfs.rootDirectory, @"file1.txt", [@"New Content" dataUsingEncoding:NSUTF8StringEncoding]);
-        
-        // List directory again
-        vfs_list_dir(vfs.rootDirectory);
-        
-        // Remove a directory
-        vfs_rmdir(vfs.rootDirectory, @"Downloads");
-        vfs_list_dir(vfs.rootDirectory);
-        
-        // Close the file system
-        [vfs.fileHandle closeFile];
-    }
-    return 0;
-}*/

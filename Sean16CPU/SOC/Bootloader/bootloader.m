@@ -15,8 +15,18 @@
 extern void *execute(void *arg);
 
 void bootloader(uint8_t binmap[1000][6]) {
-    printf("[soc-bootloader-chip] initialising block device\n");
-    fs_init();
+    if(!fs_check()) {
+        printf("[soc-bootloader-chip] initialising block device\n");
+        fs_init();
+        printf("[soc-bootloader-chip] formating block device\n");
+        fs_format();
+        printf("[soc-bootloader-chip] creating test file\n");
+        fs_cfile("test.txt", "Hello, Sean16");
+        printf("[soc-bootloader-chip] received file content: %s\n", fs_rfile("test.txt"));
+        fs_dfile("test.txt");
+    } else {
+        printf("[soc-bootloader-chip] block device is already initialised\n");
+    }
     
     // Clear Screen
     printf("[soc-bootloader-chip] clearing screen\n");

@@ -90,9 +90,11 @@ NSData *vfs_read_file(VFSDirectory *parentDir, NSString *fileName);
 void vfs_write_file(VFSDirectory *parentDir, NSString *fileName, NSData *content);
 
 // management functions
+uint8_t fs_check(void);
 void fs_init(void);
 void fs_format(void);
 void fs_mkdir(char *path);
 void fs_rmdir(char *path);
 void fs_cfile(char *path, char *content);
 void fs_dfile(char *path);
+const char* fs_rfile(char *path);
