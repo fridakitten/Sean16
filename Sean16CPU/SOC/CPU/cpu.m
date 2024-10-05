@@ -13,25 +13,31 @@
 #import <CoreGraphics/CoreGraphics.h>
 
 static uint16_t reg[S_CPU_REGISTER_MAX];
+static uint16_t dummyreg[5];
+
+uint16_t* getPointer(uint16_t value, uint8_t quad) {
+    if (value < 65) {
+        return &reg[value];
+    } else {
+        dummyreg[quad] = value - 65;
+        return &dummyreg[quad];
+    }
+}
 
 void evaluate(int *i, int mode, int reg1, int reg2, int jmpaddr) {
-    //printf("%d => %d %d => %d\n", mode, reg1, reg2, jmpaddr);
     if(mode == 0) { // EQUALS
         if(reg1 == reg2) {
             *i = jmpaddr - 1;
-            //printf("jmp to: %d\n", jmpaddr - 1);
         }
     } else if(mode == 1) {
-        if(reg1 > reg2) { // GREATER
+        if(reg1 > reg2) {
             *i = jmpaddr - 1;
-            //printf("jmp to: %d\n", jmpaddr - 1);
         }
     } else if(mode == 2) {
-        if(reg1 < reg2) { // LESS
+        if(reg1 < reg2) {
             *i = jmpaddr - 1;
-            //printf("jmp to: %d\n", jmpaddr - 1);
         }
-    } else if(mode == 3) { // EQUALS
+    } else if(mode == 3) {
         if(reg1 != reg2) {
             *i = jmpaddr - 1;
         }
@@ -50,7 +56,6 @@ void *execute(void *arg) {
     uint16_t *ptr3;
     uint16_t *ptr4;
     uint16_t *ptr5;
-    uint16_t dummyreg[5];
     uint8_t instruction;
     
     printf("[cpu] initialised\n");
@@ -59,36 +64,11 @@ void *execute(void *arg) {
     for(int i = 0; i < 1000; i++) {
         instruction = *(proccess->page[0]->memory[i][0]);
         
-        if (*(proccess->page[0]->memory[i][1]) < 65) {
-            ptr1 = &reg[*(proccess->page[0]->memory[i][1])];
-        } else {
-            dummyreg[0] = *(proccess->page[0]->memory[i][1]) - 65;
-            ptr1 = &dummyreg[0];
-        }
-        if (*(proccess->page[0]->memory[i][2]) < 65) {
-            ptr2 = &reg[*(proccess->page[0]->memory[i][2])];
-        } else {
-            dummyreg[1] = *(proccess->page[0]->memory[i][2]) - 65;
-            ptr2 = &dummyreg[1];
-        }
-        if (*(proccess->page[0]->memory[i][3]) < 65) {
-            ptr3 = &reg[*(proccess->page[0]->memory[i][3])];
-        } else {
-            dummyreg[2] = *(proccess->page[0]->memory[i][3]) - 65;
-            ptr3 = &dummyreg[2];
-        }
-        if (*(proccess->page[0]->memory[i][4]) < 65) {
-            ptr4 = &reg[*(proccess->page[0]->memory[i][4])];
-        } else {
-            dummyreg[3] = *(proccess->page[0]->memory[i][4]) - 65;
-            ptr4 = &dummyreg[3];
-        }
-        if (*(proccess->page[0]->memory[i][5]) < 65) {
-            ptr5 = &reg[*(proccess->page[0]->memory[i][5])];
-        } else {
-            dummyreg[4] = *(proccess->page[0]->memory[i][5]) - 65;
-            ptr5 = &dummyreg[4];
-        }
+        ptr1 = getPointer(*(proccess->page[0]->memory[i][1]), 1);
+        ptr2 = getPointer(*(proccess->page[0]->memory[i][2]), 2);
+        ptr3 = getPointer(*(proccess->page[0]->memory[i][3]), 3);
+        ptr4 = getPointer(*(proccess->page[0]->memory[i][4]), 4);
+        ptr5 = getPointer(*(proccess->page[0]->memory[i][5]), 5);
         
         switch(instruction) {
             case 0x00:
