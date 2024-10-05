@@ -10,7 +10,7 @@
 #import <Cocoa/Cocoa.h>
 #import <Peripherals/Mouse/Mouse.h>
 #import <GPU/gpu.h>
-#import <FileSystem/fs.h>
+#import <VFS/fs.h>
 
 extern void *execute(void *arg);
 
