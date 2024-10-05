@@ -9,7 +9,6 @@
 #include "ram.h"
 
 uint8_t RAMDISK[S_RAMSIZE_MAX];
-uint8_t claimdaddr[S_RAMSIZE_MAX];
 uint16_t current_page = 0;
 uint16_t current_addr = 0;
 
