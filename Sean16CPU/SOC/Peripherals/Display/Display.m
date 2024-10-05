@@ -38,7 +38,6 @@ NSColor *colorPalette[COLOR_COUNT];  // Array to store 256 colors
     return self;
 }
 
-// Method to initialize the traditional 256 color palette
 - (void)initializeColorPalette {
     // Define the basic 16 colors
     NSColor *basicColors[16] = {
@@ -48,41 +47,29 @@ NSColor *colorPalette[COLOR_COUNT];  // Array to store 256 colors
         [NSColor blueColor],        // 3: Blue
         [NSColor yellowColor],      // 4: Yellow
         [NSColor magentaColor],     // 5: Magenta
-        [NSColor colorWithCalibratedRed:0.0 green:1.0 blue:1.0 alpha:1.0], // 6: Cyan
+        [NSColor cyanColor],        // 6: Cyan
         [NSColor whiteColor],       // 7: White
-        [NSColor colorWithCalibratedRed:0.5 green:0.5 blue:0.5 alpha:1.0], // 8: Gray
-        [NSColor colorWithCalibratedRed:0.75 green:0.0 blue:0.0 alpha:1.0], // 9: Light Red
-        [NSColor colorWithCalibratedRed:0.0 green:0.75 blue:0.0 alpha:1.0], // 10: Light Green
-        [NSColor colorWithCalibratedRed:0.0 green:0.0 blue:0.75 alpha:1.0], // 11: Light Blue
-        [NSColor colorWithCalibratedRed:0.75 green:0.75 blue:0.0 alpha:1.0], // 12: Light Yellow
-        [NSColor colorWithCalibratedRed:0.75 green:0.0 blue:0.75 alpha:1.0], // 13: Light Magenta
-        [NSColor colorWithCalibratedRed:0.0 green:0.75 blue:0.75 alpha:1.0], // 14: Light Cyan
-        [NSColor colorWithCalibratedRed:0.75 green:0.75 blue:0.75 alpha:1.0]  // 15: Light Gray
+        [NSColor darkGrayColor],    // 8: Dark Gray
+        [NSColor lightGrayColor],   // 9: Light Gray
+        [NSColor brownColor],       // 10: Brown
+        [NSColor orangeColor],      // 11: Orange
+        [NSColor purpleColor],      // 12: Purple
+        [NSColor cyanColor],        // 13: Cyan (light)
+        [NSColor magentaColor],     // 14: Magenta (light)
+        [NSColor grayColor]         // 15: Gray
     };
 
     // Fill the first 16 colors
     for (int i = 0; i < 16; i++) {
         colorPalette[i] = basicColors[i];
     }
-    
-    // Fill in bright variants of the first 16 colors
-    for (int i = 0; i < 16; i++) {
-        colorPalette[i + 16] = [basicColors[i] colorWithAlphaComponent:0.7]; // Use alpha for a brighter look
-    }
 
-    // Fill in the rest of the colors (224 colors)
-    int index = 32;
-    for (int r = 0; r < 6; r++) { // Red
-        for (int g = 0; g < 6; g++) { // Green
-            for (int b = 0; b < 6; b++) { // Blue
-                if (index < COLOR_COUNT) {
-                    CGFloat red = (CGFloat)r / 5.0;
-                    CGFloat green = (CGFloat)g / 5.0;
-                    CGFloat blue = (CGFloat)b / 5.0;
-                    colorPalette[index++] = [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:1.0];
-                }
-            }
-        }
+    // Fill in the rest of the colors
+    for (int i = 16; i < COLOR_COUNT; i++) {
+        CGFloat red = (CGFloat)((i - 16) / 36) / 5.0;
+        CGFloat green = (CGFloat)(((i - 16) / 6) % 6) / 5.0;
+        CGFloat blue = (CGFloat)((i - 16) % 6) / 5.0;
+        colorPalette[i] = [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:1.0];
     }
 }
 
@@ -95,13 +82,27 @@ NSColor *colorPalette[COLOR_COUNT];  // Array to store 256 colors
     [self setNeedsDisplay:YES];
 }
 
-- (void)setPixelAtX:(int)x Y:(int)y colorIndex:(NSInteger)colorIndex {
-    if (x < 0 || x >= SCREEN_WIDTH || y < 0 || y >= SCREEN_HEIGHT || colorIndex < 0 || colorIndex >= COLOR_COUNT) {
-        return; // Boundary check
-    }
-    pixelData[x][y] = colorIndex;  // Set pixel color index
-    [self setNeedsDisplay:YES];  // Request redraw
+BOOL isBatchUpdating = NO;
+
+- (void)beginBatchUpdate {
+    isBatchUpdating = YES;
 }
+
+- (void)endBatchUpdate {
+    isBatchUpdating = NO;
+    [self setNeedsDisplay:YES];  // Trigger a single redraw after all updates
+}
+
+- (void)setPixelAtX:(int)x Y:(int)y colorIndex:(NSInteger)colorIndex {
+    pixelData[x][y] = colorIndex;  // Set pixel color index
+
+    if (!isBatchUpdating) {
+        CGFloat scaledPixelSize = 1.0 * SCALE_FACTOR;
+        NSRect pixelRect = NSMakeRect(x * scaledPixelSize, y * scaledPixelSize, scaledPixelSize, scaledPixelSize);
+        [self setNeedsDisplayInRect:pixelRect];  // Redraw just the pixel area
+    }
+}
+
 
 - (void)drawRect:(NSRect)dirtyRect {
     // Fill the entire view with black (or clear)
